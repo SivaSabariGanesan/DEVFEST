@@ -1,0 +1,73 @@
+.btn41-43 {
+  padding: 8px 15px;
+  font-weight: 500;
+  background: transparent;
+  outline: none !important;
+  cursor: pointer;
+  /* transition: all 0.3s ease; */
+  position: relative;
+  display: inline-block;
+}
+
+.btn-43 {
+  border: 2px solid rgb(255, 255, 255);
+  z-index: 1;
+  /* color: rgb(204, 255, 0); */
+}
+
+.btn-43:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: rgb(204, 255, 0);
+  transition: all 0.5s ease;
+}
+
+.btn-43:hover {
+  color: #111;
+}
+
+.btn-43:hover:after {
+  top: auto;
+  bottom: 0;
+  height: 100%;
+}
+.btn-43:active::after{
+  opacity: 0.3;
+}
+a{
+  cursor: pointer;
+}
+.me{
+  z-index: -4;
+  background: url('./components/me.png') no-repeat center center/cover;
+}
+
+.y{
+  color: #c3ff00
+}
+.word {
+  position: relative;
+}
+.line-mask {
+  padding: 0px;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  background-color: #111;
+  /* border: #ffffff solid 1px; */
+  opacity: 0.8;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+section {
+  clip-path: circle(100% at 50% 50%);
+  width: 100%;
+  position: absolute;
+}
