@@ -72,7 +72,8 @@ function Loader() {
           </h1> */}
           <div className="overflow-hidden">
             <h1 className="text-[9vw] bg-transparent text-[#111]" id="title3">
-              <img className="max-w-xl" src={image} alt="" />
+              {/* <img className="max-w-xl" src={image} alt="" /> */}
+              DEVS REC
             </h1>
           </div>
         </div>

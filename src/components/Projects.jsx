@@ -2,6 +2,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React from "react";
+import Hover2 from "./Hover2";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,19 +34,33 @@ function Projects() {
       <div className="flex justify-center items-center h-screen">
         <h1 className="text-[10vw] y ">EVENTS</h1>
         <section className="">
-          <div className="h-screen w-full bg-[#eee] md:text-5xl p-10">
-             UNDER CONSTRUCTION 🔨🔨🔨🔨 visit <a href="https://www.github.com/thexro" className="underline y">Github</a> for projects  
+          <div className="h-screen w-full text-9xl">
+            <div className="w-screen bg-[#dcddd9d3] h-screen px-[5vw] md:px-[10vw] md:pt-12 py-[18vw] relative rounded-[50px]">
+              <div className="h-[90vh] md:pt-2 border-2 rounded-3xl bg-[#ddd]">
+                <h1 className="md:text-[3vw] p-3 text-3xl text-black">Technicl Events</h1>
+                <div>
+                  <Hover2 number='/1.'> Event 1 </Hover2>
+                  <Hover2 number='/2.'> Event 2 </Hover2>
+                  <Hover2 number='/3.'> Event 3 </Hover2>
+                  <Hover2 number='/4.'> Event 4 </Hover2>
+                  <Hover2 number='/5.'> Event 5 </Hover2>
+                  <Hover2 number='/6.'> Event 6 </Hover2>
+                  <Hover2 number='/7.'> Event 7 </Hover2>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section className="">
           <div className="h-screen w-full bg-zinc-500 text-9xl
           ">
-            Prject 2
+            Non-Technical events
           </div>
         </section>
         <section className="">
-          <div className="h-screen w-full bg-violet-500 text-yellow-400 text-9xl">Project 3 </div>
-          
+          <div className="h-screen w-full bg-violet-500 text-yellow-400 text-9xl"> 
+            Workshops
+          </div>
         </section>
       </div>
     </div>
