@@ -40,13 +40,10 @@ function Projects() {
               <div className="h-[85vh] md:h-[82vh] mt-8 md:mt-0 md:pt-2 border-2 rounded-3xl bg-[#ddd]">
                 <h1 className="md:text-[3vw] pt-6 md:pt-8 p-3 text-3xl text-black">Technicl Events</h1>
                 <div>
-                  <Hover2 number='/1.'> Event 1 </Hover2>
-                  <Hover2 number='/2.'> Event 2 </Hover2>
-                  <Hover2 number='/3.'> Event 3 </Hover2>
-                  <Hover2 number='/4.'> Event 4 </Hover2>
-                  <Hover2 number='/5.'> Event 5 </Hover2>
-                  <Hover2 number='/6.'> Event 6 </Hover2>
-                  <Hover2 number='/7.'> Event 7 </Hover2>
+                <Hover2 number='/1.'> Mini-Hackathon </Hover2>
+                  <Hover2 number='/2.'> CodeClash </Hover2>
+                  <Hover2 number='/3.'> TechnoQuest </Hover2>
+                  <Hover2 number='/4.'> UI/UX Showdown </Hover2>
                 </div>
               </div>
             </div>
@@ -58,12 +55,11 @@ function Projects() {
               <div className="h-[75vh] md:h-[80vh] md:pt-2 border-2 rounded-3xl bg-[#ddd]">
                 <h1 className="md:text-[3vw] pt-8 p-3 text-3xl text-black">Non - Technicl Events & Workshops</h1>
                 <div>
-                  <Hover2 number='/1.' type="Non - Technical"> Event 1 </Hover2>
-                  <Hover2 number='/2.' type="Non - Technical"> Event 2 </Hover2>
-                  <Hover2 number='/3.' type="Non - Technical"> Event 3 </Hover2>
-                  <Hover2 number='/4.' type="Workshop"> Workshop 1 </Hover2>
-                  <Hover2 number='/5.' type="Workshop"> Workshop 2 </Hover2>
-                  <Hover2 number='/6.' type="Workshop"> Workshop 3 </Hover2>
+                <Hover2 number='/1.' type="Workshop"> Google Gemini LLM Workshop </Hover2>
+                  <Hover2 number='/2.' type="Workshop"> Quantum Computing Workshop </Hover2>
+                  <Hover2 number='/3.' type="Workshop"> 3D Printing Workshop </Hover2>
+                  <Hover2 number='/4.' type="Non-Technical"> Product Photography </Hover2>
+                  <Hover2 number='/5.' type="Non-Technical"> TechFlix </Hover2>
                 </div>
               </div>
             </div>

@@ -22,7 +22,7 @@ const StyledCard = styled(Card)({
     transform: 'scale(1.05)',
     boxShadow: '0 10px 30px rgba(0, 255, 255, 0.5)',
   },
-  borderRadius: '15px',
+  borderRadius: '10px',
 });
 
 const DetailsText = styled(Typography)({
@@ -63,8 +63,10 @@ export const EventCard = () => {
         alt="Card image"
         style={{
           rounded: true,
-          border: '3px solid',
-          borderColor: '#c3ff00',
+          padding: '5px',
+          borderTopLeftRadius: '15px',
+          borderTopRightRadius: '15px',
+          borderBlockColor: '#FFFFFF',
           width: '100%', // Ensures the image takes full width of the card
           height: '300px', // Set a fixed height for all cards
           objectFit: 'cover', // Ensures the image scales properly and maintains its aspect ratio
