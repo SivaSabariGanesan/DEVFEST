@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useLayoutEffect, useEffect, useRef, useState } from "react";
 import MouseFollower from "mouse-follower";
+import { AllRoutes } from "./routes/AllRoutes";
 import gsap from "gsap";
 import { ReactLenis, useLenis } from "lenis/react";
 import Layout from "./components/Layout";
@@ -23,7 +24,7 @@ function App() {
   return (
     <>
       <ReactLenis root  className="lenisroot">
-        <Layout />        
+        <AllRoutes />
       </ReactLenis>
     </>
   );

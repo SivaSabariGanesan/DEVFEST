@@ -5,7 +5,7 @@ import Hero from "./Hero";
 import Loader from "./Loader";
 import Intro from "./Intro";
 import String from "./String";
-import Projects from "./Projects";
+import Projects from "./Events";
 import Education from "./Education";
 import Tools from "./Tools";
 import Social from "./Socials";

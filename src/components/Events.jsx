@@ -30,6 +30,7 @@ function Projects() {
   });
 
   return (
+    
     <div className="w-screen relative " id="container">
       <div className="flex justify-center items-center h-screen">
         <h1 className="text-[10vw] y ">EVENTS</h1>
