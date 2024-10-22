@@ -38,11 +38,11 @@ function Navbar() {
             <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
           </a>
           <a className="group transition duration-300">
-            Blog
+            Events
             <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
           </a>
           <a className="group transition duration-300">
-            Projects
+            Contact Us
             <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
           </a>
           {/* <a className="group transition duration-300">
