@@ -23,6 +23,7 @@
     "gsap": "^3.12.5",
     "lenis": "^1.1.13",
     "locomotive-scroll": "^4.1.4",
+    "lucide-react": "^0.453.0",
     "mouse-follower": "^1.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
