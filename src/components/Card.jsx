@@ -14,7 +14,7 @@ const StyledCard = styled(Card)({
   position: 'relative',
   width: 345,
   overflow: 'hidden',
-  cursor: 'pointer',
+  // cursor: 'pointer',
   backgroundColor: '#c3ff00',
   color: '#fff',
   transition: 'transform 0.3s, box-shadow 0.3s',

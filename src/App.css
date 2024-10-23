@@ -3,7 +3,7 @@
   font-weight: 500;
   background: transparent;
   outline: none !important;
-  cursor: pointer;
+  /* cursor: pointer; */
   /* transition: all 0.3s ease; */
   position: relative;
   display: inline-block;
@@ -39,9 +39,9 @@
 .btn-43:active::after{
   opacity: 0.3;
 }
-a{
-  cursor: pointer;
-}
+/* a{ */
+  /* cursor: pointer; */
+/* } */
 .me{
   z-index: -4;
   background: url('./components/me.png') no-repeat center center/cover;

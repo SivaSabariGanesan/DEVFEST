@@ -21,7 +21,7 @@ export const PinContainer = ({
 
   return (
     (<Link
-      className={cn("relative group/pin z-50  cursor-pointer", containerClassName)}
+      className={cn("relative group/pin ", containerClassName)}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       href={href || "/"}>
