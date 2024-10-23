@@ -45,7 +45,7 @@ function Projects() {
                   <Hover2 number='/3.'> TechnoQuest </Hover2>
                   <Hover2 number='/4.'> UI/UX Showdown </Hover2>
                 </div>
-              </div>
+              </div> 
             </div>
           </div>
         </section>

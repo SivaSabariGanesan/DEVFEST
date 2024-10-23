@@ -18,6 +18,8 @@
     "@mui/material": "^6.1.5",
     "@mui/styled-engine-sc": "^6.1.5",
     "bootstrap-icons": "^1.11.3",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.11.9",
     "gsap": "^3.12.5",
     "lenis": "^1.1.13",
     "locomotive-scroll": "^4.1.4",
@@ -28,7 +30,8 @@
     "react-router-dom": "^6.27.0",
     "sass": "^1.77.8",
     "split-type": "^0.3.4",
-    "styled-components": "^6.1.13"
+    "styled-components": "^6.1.13",
+    "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

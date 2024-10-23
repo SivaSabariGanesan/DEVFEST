@@ -60,7 +60,7 @@ function Navbar() {
 
         {/* Mobile Menu (hidden by default) */}
         <div
-          className={`mobile-menu absolute top-0 left-0 w-full h-screen bg-black flex flex-col items-center justify-center transform transition-transform ${
+          className={`mobile-menu z-50 absolute top-0 left-0 w-full h-screen bg-black flex flex-col items-center justify-center transform transition-transform ${
             isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
