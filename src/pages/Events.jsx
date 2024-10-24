@@ -113,17 +113,27 @@ const events = [
   }
 ];
 
-
 export const Events = () => {
   return (
-    <div className="cursor-none min-h-screen">
-        <Navbar />
-      <h1 className="text-[6vw] underline y text-center pb-24">EVENTS</h1>
-      <div className='flex flex-wrap justify-center gap-y-20 items-center mx-auto max-w-7xl'>
-        {events.map(event => 
-          <AnimatedPinDemo evnt = {event.eventName} obj = {event.rounds[0].objective} type={event.type} />
-          )
-        }
+    <div className="cursor-none min-h-screen bg-black text-[#c3ff00]">
+      <Navbar />
+      <div className="container mx-auto px-4 py-16">
+        <h1 className="text-4xl md:text-6xl text-[#c3ff00] lg:text-[6vw] font-bold text-center mb-16 underline">
+          EVENTS
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 mx-6 lg:grid-cols-3 gap-8 justify-items-center">
+          {events.map(event => (
+            <div key={event.id} className="w-full max-w-sm my-36">
+              <AnimatedPinDemo
+                idh={event.id}
+                evnt={event.eventName}
+                obj={event.rounds[0].objective}
+                type={event.type}
+                image="/placeholder.svg" // Replace with actual image path
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
