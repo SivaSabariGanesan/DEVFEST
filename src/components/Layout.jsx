@@ -30,7 +30,7 @@ function Layout() {
       {/* <Tools /> */}
       <Projects />
       {/* <Social /> */}
-      {/* <Education/> */}
+      <Education/>
     </div>
   );
 }
