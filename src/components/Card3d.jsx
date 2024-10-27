@@ -23,7 +23,7 @@ const GlitchText = ({ children }) => {
   );
 };
 
-const CyberpunkEventCard = ({ event }) => {
+const CyberpunkEventCard = ({ event, dur }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -64,7 +64,7 @@ const CyberpunkEventCard = ({ event }) => {
           <span className="text-xs font-semibold uppercase tracking-wider">{event.type}</span>
           <div className="flex items-center gap-2 group">
             <Clock className="w-5 h-5 group-hover:text-[#00ffff] transition-colors duration-300" />
-            <span className="group-hover:text-[#00ffff] transition-colors duration-300">{event.duration}</span>
+            <span className="group-hover:text-[#00ffff] transition-colors duration-300">{event.day} - {dur}</span>
           </div>
         </div>
         <div className="mt-4 flex items-center justify-between border-t-2 border-black pt-2">

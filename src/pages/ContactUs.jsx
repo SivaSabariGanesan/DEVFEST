@@ -142,7 +142,7 @@ const CyberpunkOrganizers = () => {
 
         <CyberpunkCard className="mb-8 hover:bg-black hover:text-[#c3ff00] transition-colors duration-300">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center">
-            <GlitchText>Club Coordinators</GlitchText>
+            <GlitchText>Event Coordinators</GlitchText>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[

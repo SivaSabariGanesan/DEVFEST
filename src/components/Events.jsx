@@ -1,20 +1,21 @@
-'use client'
-
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import React, { useRef, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 
 gsap.registerPlugin(ScrollTrigger)
 
-const CyberpunkRow = ({ number, children, type }) => {
+const CyberpunkRow = ({ number, children, type, eveid }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div
+    <Link
+    to={`events/${eveid}`}
       className={`flex items-center p-4 transition-all duration-300 border-b-2 border-black cursor-pointer relative overflow-hidden ${
         isHovered ? 'bg-black text-[#c3ff00]' : 'bg-[#c3ff00] text-black'
-      }`}
+      }`
+    }
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -22,7 +23,7 @@ const CyberpunkRow = ({ number, children, type }) => {
       <span className="flex-grow font-semibold relative z-10">{children}</span>
       {type && <span className="text-xs uppercase tracking-wider relative z-10">{type}</span>}
       <div className={`absolute inset-0 bg-black transform origin-left transition-transform duration-300 ${isHovered ? 'scale-x-100' : 'scale-x-0'}`}></div>
-    </div>
+    </Link>
   );
 };
 
@@ -96,16 +97,23 @@ function Projects() {
                 <div className="cyberpunk-lines"></div>
                 <h1 className="text-2xl md:text-[3vw] pt-4 md:pt-8 px-4 md:px-6 text-black font-bold relative z-10 border-b-2 pb-1 border-black">Technical Events</h1>
                 <div className="mt-4 md:mt-6 relative z-10">
-                  <CyberpunkRow number="/1.">Mini-Hackathon</CyberpunkRow>
-                  <CyberpunkRow number="/2.">CodeClash</CyberpunkRow>
-                  <CyberpunkRow number="/3.">TechnoQuest</CyberpunkRow>
-                  <CyberpunkRow number="/4.">UI/UX Showdown</CyberpunkRow>
+                <CyberpunkRow number="/1." eveid="1">BINARY DUEL</CyberpunkRow>
+                <CyberpunkRow number="/2." eveid="2">MOCKHIRE</CyberpunkRow>
+                <CyberpunkRow number="/3." eveid="3">PROMPTY</CyberpunkRow>
+                <CyberpunkRow number="/4." eveid="4">FRONTEND BATTLE</CyberpunkRow>
+                <CyberpunkRow number="/5." eveid="5">BUILD BATTLE ROYALE</CyberpunkRow>
+                <CyberpunkRow number="/6." eveid="7">DEVSPRINT</CyberpunkRow>
+                <CyberpunkRow number="/7." eveid="11">TECH TREK</CyberpunkRow>
+                <CyberpunkRow number="/8." eveid="12">SCRIPTED BY AI</CyberpunkRow>
                 </div>
               </div> 
             </div>
           </div>
         </section>
-        <section className="flex items-center justify-center h-screen w-screen">
+        <section className="flex items-center h-screen w-screen  justify-center ">
+        <div className="absolute inset-0 bg-[#c3ff00]">
+            <div className="absolute inset-0 bg-[url('https://imgs.search.brave.com/nHz8pLBiCMm_yM0Pz33ff1l7dFWbpRoUf3Iq9K7OJAU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jNC53/YWxscGFwZXJmbGFy/ZS5jb20vd2FsbHBh/cGVyLzQxMC8xMDE0/LzQ0OC9uaWdodC1j/eWJlcnB1bmstZnV0/dXJpc3RpYy1jaXR5/LWFydHdvcmstd2Fs/bHBhcGVyLXByZXZp/ZXcuanBn')] bg-cover bg-center opacity-10 mix-blend-multiply"></div>
+          </div>
           <div className="w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] mx-auto relative">
             <div className="cyberpunk-scanner absolute inset-0"></div>
             <div className="overflow-hidden bg-[#c3ff00] border-4 border-black shadow-lg shadow-black/50 relative">
@@ -114,11 +122,11 @@ function Projects() {
                 <div className="cyberpunk-lines"></div>
                 <h1 className="text-2xl md:text-[3vw] pt-4 md:pt-8 px-4 md:px-6 text-black font-bold relative z-10 border-b-2 pb-1 border-black">Non-Technical Events & Workshops</h1>
                 <div className="mt-4 md:mt-6 relative z-10">
-                  <CyberpunkRow number="/1." type="Workshop">Google Gemini LLM Workshop</CyberpunkRow>
-                  <CyberpunkRow number="/2." type="Workshop">Quantum Computing Workshop</CyberpunkRow>
-                  <CyberpunkRow number="/3." type="Workshop">3D Printing Workshop</CyberpunkRow>
-                  <CyberpunkRow number="/4." type="Non-Technical">Product Photography</CyberpunkRow>
-                  <CyberpunkRow number="/5." type="Non-Technical">TechFlix Event</CyberpunkRow>
+                  <CyberpunkRow number="/1." eveid="6" type="workshop">IOT Workshop</CyberpunkRow>
+                  <CyberpunkRow number="/2." eveid="8" type="non- technical">OPEN MIC</CyberpunkRow>
+                  <CyberpunkRow number="/3." eveid="10" type="workshop" >CONTENT CREATION WORKSHOP</CyberpunkRow>
+                  <CyberpunkRow number="/4." eveid="13" type="workshop" >LLM Workshop</CyberpunkRow>
+                  <CyberpunkRow number="/5." eveid="9" type="non- technical">VIDEO SHOWDOWN</CyberpunkRow>
                 </div>
               </div>
             </div>

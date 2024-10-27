@@ -66,26 +66,31 @@ const Education = () => {
 
   const faqData = [
     {
-      question: "What is DEVS?",
-      answer: "DEVS (Digital Empowerment Via Software) is a student-run club at REC focused on fostering technological innovation and skill development in software engineering."
+      question: "Do we have to pay for each event? How much?",
+      answer: "Yes, there is a registration fee for each event. Here’s the pricing structure for each day:\n• Event Only:\n   • ₹50 for 2 events\n   • ₹75 for 3 events\n   • ₹100 for 4 events\n• Workshop Only:\n   • ₹50 for half-day workshops\n   • ₹100 for full-day workshops\n• Event and Workshop:\n   • ₹150 for a maximum of 2 events and 1 workshop"
     },
     {
-      question: "How can I join DEVS?",
-      answer: "You can join DEVS by attending our orientation sessions at the beginning of each academic year or by reaching out to our club coordinators via email or social media."
+      question: "Is DevFest'24 open to participants from all academic years?",
+      answer: "Yes! Anyone, including first-year students, can participate! OD will be provided for the registered events."
     },
     {
-      question: "What kind of events does DEVS organize?",
-      answer: "DEVS organizes a variety of events including hackathons, coding competitions, workshops, tech talks, and networking sessions with industry professionals."
+      question: "How can I stay updated about the event?",
+      answer: "You can stay updated by following our official social media pages and checking the event website for announcements and information. WhatsApp groups will have all event updates."
     },
     {
-      question: "Do I need to be a computer science student to join DEVS?",
-      answer: "Not at all! DEVS welcomes students from all disciplines who are interested in technology and software development."
+      question: "Are there prizes for the winners?",
+      answer: "Yes, winners will receive exciting cash prizes and recognition for their achievements!"
     },
     {
-      question: "How can I stay updated about DEVS events?",
-      answer: "You can follow our social media accounts, join our mailing list, or check our website regularly for updates on upcoming events and activities."
+      question: "What happens if I need to cancel my registration?",
+      answer: "Please contact the organizers as soon as possible. Refunds will not be issued."
+    },
+    {
+      question: "Can I volunteer for DEVFest’24?",
+      answer: "Yes! We welcome volunteers! Join our WhatsApp community for more details or DM us on Instagram."
     }
-  ];
+];
+
 
   return (
     <div className="bg-[#c3ff00] min-h-screen text-black font-mono">

@@ -11,6 +11,8 @@ const events = [
     "type": "Technical",
     "eventType": "Team (2)",
     "duration": "2 hours",
+    "timeSlot": "9AM - 11AM",
+    "day": "Day 1",
     "rounds": [
       {
         "roundNumber": 1,
@@ -33,6 +35,8 @@ const events = [
     "type": "Technical",
     "eventType": "Individual",
     "duration": "3 hours",
+    "timeSlot": "9AM - 12PM",
+    "day": "Day 1",
     "rounds": [
       {
         "roundNumber": 1,
@@ -60,7 +64,9 @@ const events = [
     "eventName": "PROMPTY",
     "type": "Technical",
     "eventType": "Team (2-3)",
-    "duration": "2.5 hours",
+    "duration": "2 hours",
+    "timeSlot": "12:30PM - 2:30PM",
+    "day": "Day 1",
     "rounds": [
       {
         "roundNumber": 1,
@@ -88,7 +94,9 @@ const events = [
     "eventName": "FRONTEND BATTLE",
     "type": "Technical",
     "eventType": "Team (2-3)",
-    "duration": "2.5 hours",
+    "duration": "2 hours",
+    "timeSlot": "9AM - 11AM",
+    "day": "Day 1",
     "rounds": [
       {
         "roundNumber": 1,
@@ -103,7 +111,7 @@ const events = [
         "objective": "Design a functional and appealing website with sections like Home, Events, Members, Contact."
       }
     ],
-    "callManager": "Manovikram"
+    "callManager": "Mano"
   },
   {
     "id": "5",
@@ -111,6 +119,8 @@ const events = [
     "type": "Technical",
     "eventType": "Individual",
     "duration": "2 hours",
+    "timeSlot": "12:30PM - 2:30PM",
+    "day": "Day 1",
     "rounds": [
       {
         "roundNumber": 1,
@@ -129,170 +139,188 @@ const events = [
   },
   {
     "id": "6",
-    "eventName": "SCRIPTED BY AI",
-    "type": "Technical",
-    "eventType": "Team (2-4)",
-    "duration": "2 hours",
+    "eventName": "IOT Workshop",
+    "type": "Workshop",
+    "eventType": "Workshop",
+    "duration": "9AM - 2:45PM",
+    "timeSlot": "8:30AM - 2:45PM",
+    "day": "Day 1",
     "rounds": [
       {
         "roundNumber": 1,
-        "roundDescription": "Story Development and Video Creation",
-        "timeLimit": "Varies within 2 hours",
-        "objective": "Use AI tools for story and video creation. Judging based on creativity, AI use, presentation, and engagement."
-      }
-    ],
-    "callManager": "Sri Praveen"
-  },
-  {
-    "id": "7",
-    "eventName": "QUIZZY",
-    "type": "Technical",
-    "eventType": "Team (2-3)",
-    "duration": "2 hours",
-    "rounds": [
-      {
-        "roundNumber": 1,
-        "roundDescription": "Basic MCQ Quiz",
-        "timeLimit": "Varies within 2 hours",
-        "objective": "Teams answer tech-related MCQs to qualify for the final round."
+        "roundDescription": "Introduction to IoT",
+        "timeLimit": "9:00AM - 9:15AM",
+        "objective": "Learn the fundamentals of IoT systems and applications."
       },
       {
         "roundNumber": 2,
-        "roundDescription": "Common Quiz",
-        "timeLimit": "Varies within 2 hours",
-        "objective": "Teams face same set of questions; speed and accuracy determine the winner."
+        "roundDescription": "IoT Protocols and Sensor Usage",
+        "timeLimit": "10:30AM - 11:00AM",
+        "objective": "Overview of IoT protocols and usage of sensors."
+      },
+      {
+        "roundNumber": 3,
+        "roundDescription": "Hands-On Session",
+        "timeLimit": "11:30AM - 2:45PM",
+        "objective": "Hands-on projects with IoT and Arduino."
       }
     ],
-    "callManager": "Thirumurugan"
+    "callManager": "Thiru",
+    "price": "INR100"
+  },
+  {
+    "id": "7",
+    "eventName": "DEVSPRINT",
+    "type": "Technical",
+    "eventType": "Team (4)",
+    "duration": "5 hours",
+    "timeSlot": "9AM - 2PM",
+    "day": "Day 1",
+    "rounds": [],
+    "callManager": "Dhiksha"
   },
   {
     "id": "8",
+    "eventName": "OPEN MIC",
+    "type": "Non-Technical",
+    "eventType": "Individual",
+    "duration": "2 hours",
+    "timeSlot": "9AM - 11AM",
+    "day": "Day 2",
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "roundDescription": "The Icebreaker Challenge",
+        "timeLimit": "30 mins",
+        "objective": "Participants showcase their talents in a quick-fire format."
+      },
+      {
+        "roundNumber": 2,
+        "roundDescription": "Personality Impersonation",
+        "timeLimit": "45 mins",
+        "objective": "Impersonate famous personalities and answer questions."
+      },
+      {
+        "roundNumber": 3,
+        "roundDescription": "Surprise Talent Showdown",
+        "timeLimit": "30 mins",
+        "objective": "Perform random talents drawn from a hat."
+      }
+    ],
+    "callManager": "Dhiksha"
+  },
+  {
+    "id": "9",
     "eventName": "VIDEO SHOWDOWN",
     "type": "Technical",
     "eventType": "Individual",
-    "duration": "5 hours (online) + 150 mins (offline)",
+    "duration": "5 hours (online) + 2 hours (offline)",
+    "timeSlot": "9AM - 11AM",
+    "day": "Day 2",
     "rounds": [
       {
         "roundNumber": 1,
         "roundDescription": "Online video editing on assigned movie or celebrity",
         "timeLimit": "5 hours",
-        "objective": "Participants create a video highlighting an assigned topic. Top 12 advance."
+        "objective": "Participants create a video highlighting an assigned topic."
       },
       {
         "roundNumber": 2,
         "roundDescription": "Offline trailer-cut video editing",
-        "timeLimit": "150 mins",
+        "timeLimit": "2 hours",
         "objective": "Edit videos in person with a specific genre assigned via chit draw."
       }
     ],
     "callManager": "Adhithya"
   },
   {
-    "id": "9",
-    "eventName": "PHOTOSHOP",
-    "type": "Technical",
-    "eventType": "Team",
-    "duration": "1.5 hours",
+    "id": "10",
+    "eventName": "CONTENT CREATION WORKSHOP",
+    "type": "Workshop",
+    "eventType": "Workshop",
+    "duration": "9AM - 12PM",
+    "day": "Day 2",
+    "timeSlot": "9AM - 12PM",
     "rounds": [
       {
         "roundNumber": 1,
-        "roundDescription": "Poster Design Challenge",
+        "roundDescription": "Content Creation and YouTube Basics",
         "timeLimit": "1 hour",
-        "objective": "Create a promotional poster for a DEVfest event using Adobe Photoshop."
+        "objective": "Learn content creation, audience engagement, and YouTube channel setup."
       },
       {
         "roundNumber": 2,
-        "roundDescription": "Creative Remix Challenge",
-        "timeLimit": "30 mins",
-        "objective": "Remix pre-designed graphics into a new promotional poster."
+        "roundDescription": "Monetization Strategies",
+        "timeLimit": "1 hour",
+        "objective": "Explore monetization techniques on YouTube."
       }
     ],
-    "callManager": "Henry"
+    "callManager": "Livesh",
+    "price": "INR50"
   },
   {
-    "id": "10",
-    "eventName": "TECHTREK",
+    "id": "11",
+    "eventName": "TECH TREK",
     "type": "Technical",
+    "day": "Day 2",
     "eventType": "Team (2-3)",
     "duration": "2 hours",
+    "timeSlot": "9AM - 11AM",
     "rounds": [
       {
         "roundNumber": 1,
-        "roundDescription": "Tech-themed treasure hunt",
+        "roundDescription": "Treasure Hunt",
         "timeLimit": "2 hours",
-        "objective": "Locate hidden QR codes around campus to solve tech-related clues."
+        "objective": "Solve tech-related clues in a campus-wide treasure hunt."
       }
     ],
     "callManager": "Mrithika"
   },
   {
-    "id": "11",
-    "eventName": "OPEN MIC",
-    "type": "Non-Technical",
-    "eventType": "Individual",
-    "duration": "3 hours",
+    "id": "12",
+    "eventName": "SCRIPTED BY AI",
+    "type": "Technical",
+    "day": "Day 2",
+    "eventType": "Team (2-4)",
+    "duration": "1 hour",
+    "timeSlot": "12:30PM - 1:30PM",
     "rounds": [
       {
         "roundNumber": 1,
-        "roundDescription": "Showcase talent",
-        "timeLimit": "5 mins per participant",
-        "objective": "Encourage creativity and self-expression through performances."
+        "roundDescription": "Story Development and Video Creation",
+        "timeLimit": "Varies within 1 hour",
+        "objective": "Use AI tools for story and video creation."
       }
     ],
-    "callManager": "Dhiksha"
-  },
-  {
-    "id": "12",
-    "eventName": "WORKSHOPS",
-    "type": "Workshop",
-    "eventType": "Workshop",
-    "duration": "Varies",
-    "rounds": [
-      {
-        "roundNumber": 1,
-        "roundDescription": "IoT Workshop",
-        "timeLimit": "8:30AM - 2:45PM (November 5)",
-        "objective": "Learn the fundamentals of IoT systems and applications.",
-        "callManager": "Thirumurugan",
-        "price": "INR100"
-      },
-      {
-        "roundNumber": 2,
-        "roundDescription": "LLM Workshop",
-        "timeLimit": "9AM - 2PM (November 6)",
-        "objective": "Learn the fundamentals of Large Language Models and their applications.",
-        "callManager": "Nithya Shree AK",
-        "price": "INR100"
-      },
-      {
-        "roundNumber": 3,
-        "roundDescription": "MICRO SAAS Workshop",
-        "timeLimit": "9AM - 12PM",
-        "objective": "Explore building micro SaaS applications.",
-        "callManager": "Nithya Shree AK",
-        "price": "INR50"
-      },
-      {
-        "roundNumber": 4,
-        "roundDescription": "YOUTUBE AS A CAREER Workshop",
-        "timeLimit": "9AM - 12PM",
-        "objective": "Learn about content creation and monetization on YouTube.",
-        "callManager": "Livesh",
-        "price": "INR50"
-      }
-    ]
+    "callManager": "Sri Praveen"
   },
   {
     "id": "13",
-    "eventName": "DEV SPRINT [DEVFest'24 EXPO]",
-    "type": "Expo",
-    "eventType": "Individual",
-    "duration": "5 hours",
-    "rounds": [],
-    "time": "9AM - 2PM",
-    "callManager": "Dhiksha"
+    "eventName": "LLM Workshop",
+    "day": "Day 2",
+    "type": "Workshop",
+    "eventType": "Workshop",
+    "duration": "9AM - 2PM",
+    "timeSlot": "9AM - 2PM",
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "roundDescription": "Introduction to Large Language Models",
+        "timeLimit": "9:00AM - 10:00AM",
+        "objective": "Understand LLMs and their applications."
+      },
+      {
+        "roundNumber": 2,
+        "roundDescription": "Hands-On with RAG and Gemini",
+        "timeLimit": "10:10AM - 12:00PM",
+        "objective": "Learn about RAG and LLM applications with Gemini."
+      }
+    ],
+    "callManager": "Nithya",
+    "price": "INR100"
   }
 ]
+
 
 const CyberpunkButton = ({ children, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -334,7 +362,7 @@ export const Events = () => {
               <CyberpunkEventCard
                 event={event}
                 idh={event.id}
-                dur = {event.duration}
+                dur = {event.timeSlot}
                 evnt={event.eventName}
                 obj={event.rounds && event.rounds.length > 0 ? event.rounds[0].objective : "Objective not available"}
                 type={event.type}

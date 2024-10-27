@@ -56,7 +56,10 @@ function Navbar() {
             <i className="bi bi-x-lg"></i>
           </button>
           <ul className="flex flex-col gap-8 text-center text-cyan-500 text-3xl">
-            {["Home", "About", "Events", "Contact Us"].map((item, index) => (
+              <Link to={'/'} onClick={toggleMobileMenu} key={0} className="cyber-hover">
+                Home
+              </Link>
+            {["Events", "Contact Us"].map((item, index) => (
               <Link to={`/${item.toLowerCase().replace(" ", "-")}`} onClick={toggleMobileMenu} key={index} className="cyber-hover">
                 {item}
               </Link>

@@ -30,43 +30,49 @@ const Intro = () => {
 
   return (
     <>
-      <div
-        className="mx-[5vw] md:mx-[10vw] my-[12vh] md:mt-[5vw] md:flex md:flex-col gap-24 "
+  <div
+        className="mx-[5vw] md:mx-[9vw] md:mt-[4vw] md:flex md:flex-col gap-24 "
         id="about"
       >
         <div className="flex flex-col">
           <div className="mb-10 about h-[11vw] w-[18 overflow-hidden flex bf ">
-            <span className="text-[10vw] inline-block text-black y about1 ">A</span>
-            <span className="text-[10vw] inline-block text-black y about2 ">b</span>
-            <span className="text-[10vw] inline-block text-black y about3 ">o</span>
-            <span className="text-[10vw] inline-block text-black y about4 ">u</span>
-            <span className="text-[10vw] inline-block text-black y about5 ">t</span>
+            <span className="text-[7vw] my-auto inline-block text-black y about1 ">A</span>
+            <span className="text-[7vw] my-auto inline-block text-black y about2 ">b</span>
+            <span className="text-[7vw] my-auto inline-block text-black y about3 ">o</span>
+            <span className="text-[7vw] my-auto inline-block text-black y about4 ">u</span>
+            <span className="text-[7vw] my-auto inline-block text-black y about5 ">t</span>
             <span className="text-[10vw] inline-block text-black y about6 md:ml-[2rem] ml-[1rem]">D</span>
             <span className="text-[10vw] inline-block text-black y about7 ">E</span>
             <span className="text-[10vw] inline-block text-black y about8 ">V</span>
+            <span className="text-[10vw] inline-block text-black y about9 ">F</span>
+            <span className="text-[10vw] inline-block text-black y about9 ">E</span>
             <span className="text-[10vw] inline-block text-black y about9 ">S</span>
+            <span className="text-[10vw] inline-block text-black y about9 ">T</span>
+            <span className="text-[10vw] inline-block text-black y about9 ">'</span>
+            <span className="text-[10vw] inline-block text-black y about9 ">24</span>
           </div>
         </div>
 
-        <div className="flex items-center para md:flex-row  ">
-          <div className="text-2xl text-black md:text-[3vw] leading-none para ">
-            <AnimatedText
-              text={`To create a dynamic community of developers who are passionate about technology and innovation, and who collaborate to solve real-world problems and create value for society`}
-              id={3}
-            />
-          </div>
-        </div>
-        {/* <div className="leading-5 tracking-wide flex my-10 overflow-hidden ">
-          <p className="w-1/2"></p>
-          <p className="md:w-1/2 w-100 text-right md:text-xl">
-            <AnimatedText
-              text={`Whether I’m designing intuitive interfaces or crafting robust server-side logic, I thrive on challenges that push my creativity and technical skills. Explore my projects below to see how I can help bring your vision to life!`}
-              id={1}
-            />
-          </p>
-        </div> */}
+    <div className="flex items-center mt-6 para md:flex-row">
+      <div className="text-[5vw] md:text-[3vw] leading-none text-black para">
+        <AnimatedText
+          text={`To create a dynamic community of developers who are passionate about technology and innovation, and who collaborate to solve real-world problems and create value for society`}
+          id={3}
+        />
       </div>
-    </>
+    </div>
+
+    <div className="leading-5 tracking-wide flex my-6 md:my-2 overflow-hidden">
+    <div className="text-[5vw] md:text-[3vw] leading-none text-black para">
+        <AnimatedText
+          text={`Whether I’m designing intuitive interfaces or crafting robust server-side logic, I thrive on challenges that push my creativity and technical skills. Explore my projects below to see how I can help bring your vision to life!`}
+          id={1}
+        />
+      </div>
+    </div>
+  </div>
+</>
+
   );
 };
 
