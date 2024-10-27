@@ -27,10 +27,9 @@ function Navbar() {
   return (
     <>
       <nav className="mx-4 md:mx-24 py-8 flex justify-between border-b-2 border-black text-black items-center relative z-40">
-        <Link to="/" className="logo text-4xl font-semibold">DEVS REC</Link>
-
+        <Link to="/home" className="logo text-4xl font-semibold">DEVS REC</Link>
         <ul className="hidden md:flex gap-12">
-          <Link to={'/'} key='12' className="group transition duration-300 text-lg">
+          <Link to={'/home'} key='12' className="group transition duration-300 text-lg">
             Home
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-cyan-500"></span>
           </Link>
@@ -56,7 +55,7 @@ function Navbar() {
             <i className="bi bi-x-lg"></i>
           </button>
           <ul className="flex flex-col gap-8 text-center text-cyan-500 text-3xl">
-              <Link to={'/'} onClick={toggleMobileMenu} key={0} className="cyber-hover">
+              <Link to={'/home'} onClick={toggleMobileMenu} key={0} className="cyber-hover">
                 Home
               </Link>
             {["Events", "Contact Us"].map((item, index) => (

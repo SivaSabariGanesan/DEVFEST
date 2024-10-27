@@ -1,72 +1,69 @@
-import React, { useEffect, useState, useRef } from "react";
-import { gsap } from "gsap";
+'use client'
 
-function Hero() {
-  const [time, setTime] = useState(new Date());
-  const titleRef = useRef(null);
-  const subTitleRef = useRef(null);
-  const glitchLayers = useRef([]);
+import React, { useEffect, useState, useRef } from "react"
+import { gsap } from "gsap"
+
+export default function Component() {
+  const [currentTime, setCurrentTime] = useState(new Date())
+  const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+  const titleRef = useRef(null)
+  const subTitleRef = useRef(null)
+  const glitchLayers = useRef([])
+
+  const eventDate = new Date('2024-11-05T00:00:00')
 
   useEffect(() => {
-    const updateTime = () => setTime(new Date());
-    const intervalId = setInterval(updateTime, 1000);
-    return () => clearInterval(intervalId);
-  }, []);
+    const updateTime = () => {
+      const now = new Date()
+      setCurrentTime(now)
+      
+      const difference = eventDate.getTime() - now.getTime()
+      
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24))
+        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24)
+        const minutes = Math.floor((difference / 1000 / 60) % 60)
+        const seconds = Math.floor((difference / 1000) % 60)
+        
+        setCountdown({ days, hours, minutes, seconds })
+      }
+    }
+    
+    const intervalId = setInterval(updateTime, 1000)
+    return () => clearInterval(intervalId)
+  }, [])
 
   useEffect(() => {
     gsap.fromTo(
       titleRef.current,
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 4, ease: "power3.out" }
-    );
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+    )
 
-    const flickerTimeline = gsap.timeline();
+    const flickerTimeline = gsap.timeline({ repeat: -1, repeatDelay: 5 })
     flickerTimeline
       .to(subTitleRef.current, {
         opacity: 0.3,
-        y: -10,
-        color: "#111",
         duration: 0.1,
         ease: "power2.inOut",
         yoyo: true,
-
       })
       .to(subTitleRef.current, {
         opacity: 1,
-        y: 0,
-        color: "#111",
         duration: 0.2,
         ease: "power2.inOut",
         delay: 0.2,
-      });
-
-    const flickerMainTitle = gsap.timeline({ repeat: -1, repeatDelay: 2 });
-    flickerMainTitle
-      .to(titleRef.current, {
-        opacity: 0.8,
-        duration: 0.1,
-        ease: "power2.inOut",
-        repeat: 3,
-        yoyo: true,
-        delay: Math.random() * 2,
       })
-      .to(titleRef.current, {
-        opacity: 1,
-        duration: 0.2,
-        ease: "power2.inOut",
-        delay: Math.random() * 3 + 1,
-      });
 
-    const glitchTimeline = gsap.timeline({ repeat: -1 });
+    const glitchTimeline = gsap.timeline({ repeat: -1, repeatDelay: 7 })
     glitchTimeline
       .set(glitchLayers.current, { opacity: 0 })
       .to(glitchLayers.current, {
         duration: 0.1,
         opacity: 1,
-        x: () => Math.random() * 20 - 10,
-        scaleX: () => 1 + Math.random() * 0.2,
-        scaleY: () => 1 + Math.random() * 0.1,
-        color: () => (Math.random() > 0.5 ? "#111" : "#111"),
+        x: () => Math.random() * 10 - 5,
+        scaleX: () => 1 + Math.random() * 0.1,
+        scaleY: () => 1 + Math.random() * 0.05,
         repeat: 1,
         yoyo: true,
         stagger: 0.05,
@@ -74,81 +71,120 @@ function Hero() {
       .to(glitchLayers.current, {
         opacity: 0,
         duration: 0.1,
-        delay: Math.random() * 1.2 + 0.5,
-      });
+        delay: Math.random() * 0.5 + 0.2,
+      })
 
     const glitchChars = () => {
-      const titleElement = titleRef.current;
-      let originalText = titleElement.innerText;
+      const titleElement = titleRef.current
+      let originalText = titleElement.innerText
       const glitchInterval = setInterval(() => {
-        const chars = originalText.split("");
+        const chars = originalText.split("")
         for (let i = 0; i < chars.length; i++) {
-          if (Math.random() > 0.7) {
-            chars[i] = Math.random() > 0.5 ? "0" : "1";
+          if (Math.random() > 0.9) {
+            chars[i] = Math.random() > 0.5 ? "0" : "1"
           }
         }
-        titleElement.innerText = chars.join("");
+        titleElement.innerText = chars.join("")
         setTimeout(() => {
-          titleElement.innerText = originalText;
-        }, 50);
-      }, 2000);
+          titleElement.innerText = originalText
+        }, 50)
+      }, 5000)
 
-      return () => clearInterval(glitchInterval);
-    };
+      return () => clearInterval(glitchInterval)
+    }
 
-    glitchChars();
-  }, []);
+    glitchChars()
+  }, [])
 
   const formatTime = (date) => {
-    const hours = String(date.getHours()).padStart(2, "0");
-    const minutes = String(date.getMinutes()).padStart(2, "0");
-    return `${hours}:${minutes}`;
-  };
+    const hours = String(date.getHours()).padStart(2, "0")
+    const minutes = String(date.getMinutes()).padStart(2, "0")
+    return `${hours}:${minutes}`
+  }
 
   return (
-    <div className="h-screen flex flex-col justify-between" id="home">
-      <div className="mx-6 md:mx-16 pt-40 md:pt-60 flex md:flex-row relative flex-grow">
-        <div className="w-full text-left">
-          <div className="relative">
+    <div className="min-h-screen bg-transparent text-black flex items-center justify-center">
+      <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center md:text-left">
+          <div className="relative inline-block">
             <h1
               ref={titleRef}
-              className="font-black text-8xl md:text-[8rem] lg:text-[12rem] text-black z-10 relative glitch-text leading-tight"
+              className="font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-none md:leading-tight"
             >
-              DEV<br className="block md:hidden" />FEST<br className="block md:hidden" />'24
+              <span className="md:hidden">
+                DEV
+                <br />
+                FEST
+                <br />
+                '24
+              </span>
+              <span className="hidden md:inline">DEVFEST'24</span>
             </h1>
-            <div
-              ref={(el) => (glitchLayers.current[0] = el)}
-              className="glitch-layer text-8xl md:text-[8rem] lg:text-[12rem] text-red-500 absolute top-0 left-0"
-            >
-              DEV<br className="block md:hidden" />FEST<br className="block md:hidden" />'24
-            </div>
-            <div
-              ref={(el) => (glitchLayers.current[1] = el)}
-              className="glitch-layer text-8xl md:text-[8rem] lg:text-[12rem] text-blue-500 absolute top-0 left-0"
-            >
-              DEV<br className="block md:hidden" />FEST<br className="block md:hidden" />'24
-            </div>
+            {[0, 1].map((index) => (
+              <div
+                key={index}
+                ref={(el) => (glitchLayers.current[index] = el)}
+                className="glitch-layer absolute top-0 left-0 w-full h-full pointer-events-none"
+              >
+                <span className="font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-none md:leading-tight opacity-50">
+                  <span className="md:hidden">
+                    DEV
+                    <br />
+                    FEST
+                    <br />
+                    '24
+                  </span>
+                  <span className="hidden md:inline">DEVFEST'24</span>
+                </span>
+              </div>
+            ))}
           </div>
           <p
             ref={subTitleRef}
-            className="text-sm md:text-lg lg:text-xl xl:text-2xl opacity-60  text-black"
+            className="text-lg md:hidden sm:text-xl md:text-2xl lg:text-3xl mt-4"
           >
             Brought to you by DEVS REC
           </p>
+          <div className="mt-6 md:mt-8 md:hidden space-y-2 md:space-y-0 md:space-x-4">
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold inline-block">
+              Where talent meets opportunity
+            </p>
+            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold inline-block">
+              Now or never
+            </p>
+          </div>
+          <div className="mt-6 md:flex md:justify-between md:mt-8">
+            {/* <div className="">
+              <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+                {formatTime(currentTime)}
+              </p>
+              <p className="text-lg sm:text-xl  md:text-2xl lg:text-3xl mt-2">
+                {currentTime.getFullYear()}
+              </p>
+            </div> */}
+            <p className="text-xl sm:text-2xl my-auto md:text-3xl lg:text-4xl mt-2 font-semibold text-black">
+              Registrations open soon
+            </p>
+          </div>
+          <div className="mt-6 flex-row md:mt-8">
+            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              Countdown to DevFest'24
+            </p>
+            <div className="flex justify-center md:justify-start space-x-4">
+              {Object.entries(countdown).map(([unit, value]) => (
+                <div key={unit} className="text-center">
+                  <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+                    {value}
+                  </p>
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl">
+                    {unit.charAt(0).toUpperCase() + unit.slice(1)}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="hidden md:flex flex-col mt-10 items-center gap-10 text-xs sm:text-sm">
-          <p className="text-black text-center md:text-right md:w-44">
-            {formatTime(time)} <br /> <span>{time.getFullYear()}</span>
-          </p>
-        </div>
-      </div>
-      <div className="md:hidden text-center pb-4">
-        <p className="text-black text-sm">
-          {formatTime(time)} <br /> <span>{time.getFullYear()}</span>
-        </p>
       </div>
     </div>
-  );
+  )
 }
-
-export default Hero;

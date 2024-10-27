@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { useNavigate } from 'react-router-dom';
 
+
 const events = [
   {
     "id": "1",
@@ -348,7 +349,7 @@ export const Events = () => {
     <div className="cursor-none min-h-screen bg-[#c3ff00] bg-center text-black">
       <Navbar />
       <div className='mx-[5vw] my-6 md:mx-[10vw]'>
-        <CyberpunkButton onClick={() => navigate('/')}>
+        <CyberpunkButton onClick={() => navigate('/home')}>
           <i className="bi bi-box-arrow-left mr-1"></i> Back
         </CyberpunkButton>
       </div>
@@ -366,7 +367,7 @@ export const Events = () => {
                 evnt={event.eventName}
                 obj={event.rounds && event.rounds.length > 0 ? event.rounds[0].objective : "Objective not available"}
                 type={event.type}
-                image={event.image || "/placeholder.svg"}
+                image={`@/components/assets/${event.eventName}` || "/placeholder.svg"}
               />
             </div>
           ))}

@@ -110,7 +110,7 @@ function Projects() {
             </div>
           </div>
         </section>
-        <section className="flex items-center h-screen w-screen  justify-center ">
+        <section className=" flex items-center h-screen w-screen  justify-center ">
         <div className="absolute inset-0 bg-[#c3ff00]">
             <div className="absolute inset-0 bg-[url('https://imgs.search.brave.com/nHz8pLBiCMm_yM0Pz33ff1l7dFWbpRoUf3Iq9K7OJAU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jNC53/YWxscGFwZXJmbGFy/ZS5jb20vd2FsbHBh/cGVyLzQxMC8xMDE0/LzQ0OC9uaWdodC1j/eWJlcnB1bmstZnV0/dXJpc3RpYy1jaXR5/LWFydHdvcmstd2Fs/bHBhcGVyLXByZXZp/ZXcuanBn')] bg-cover bg-center opacity-10 mix-blend-multiply"></div>
           </div>
