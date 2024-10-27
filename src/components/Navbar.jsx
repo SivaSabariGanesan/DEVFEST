@@ -24,7 +24,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="mx-[5vw] md:mx-[10vw] max-w-7xl py-16 flex justify-between items-center md:z-10 z-40 relative">
+      <nav className="mx-[5vw] md:mx-[10vw] max-w-7xl py-8 flex justify-between border-b-2 border-black text-black items-center md:z-10 z-40 relative">
         <Link to="/" className="logo text-3xl">DEVS REC</Link>
 
         <ul className="hidden md:flex gap-12">

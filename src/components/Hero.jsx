@@ -1,11 +1,13 @@
+'use client'
+
 import React, { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 
 function Hero() {
   const [time, setTime] = useState(new Date());
-  const titleRef = useRef(null); // Reference for the title
-  const subTitleRef = useRef(null); // Reference for the subtitle
-  const glitchLayers = useRef([]); // Reference for glitch layers
+  const titleRef = useRef(null);
+  const subTitleRef = useRef(null);
+  const glitchLayers = useRef([]);
 
   useEffect(() => {
     const updateTime = () => setTime(new Date());
@@ -14,20 +16,18 @@ function Hero() {
   }, []);
 
   useEffect(() => {
-    // Initial fade-in animation for the title
     gsap.fromTo(
       titleRef.current,
       { y: 100, opacity: 0 },
       { y: 0, opacity: 1, duration: 4, ease: "power3.out" }
     );
 
-    // Flicker effect for the subtitle
     const flickerTimeline = gsap.timeline({ repeat: -1, repeatDelay: 0.5 });
     flickerTimeline
       .to(subTitleRef.current, {
         opacity: 0.3,
-        y: -10, // Slight upward movement
-        color: "#ff0000", // Change color to red
+        y: -10,
+        color: "#111",
         duration: 0.1,
         ease: "power2.inOut",
         yoyo: true,
@@ -35,14 +35,13 @@ function Hero() {
       })
       .to(subTitleRef.current, {
         opacity: 1,
-        y: 0, // Reset position
-        color: "#ffffff", // Reset color to white
+        y: 0,
+        color: "#111",
         duration: 0.2,
         ease: "power2.inOut",
-        delay: 0.2, // Delay before resetting
+        delay: 0.2,
       });
 
-    // Flicker effect with yoyo for the main title
     const flickerMainTitle = gsap.timeline({ repeat: -1, repeatDelay: 2 });
     flickerMainTitle
       .to(titleRef.current, {
@@ -60,28 +59,26 @@ function Hero() {
         delay: Math.random() * 3 + 1,
       });
 
-    // Glitch effect with color noise and transformation for both layers (red and blue)
     const glitchTimeline = gsap.timeline({ repeat: -1 });
     glitchTimeline
-      .set(glitchLayers.current, { opacity: 0 }) // Initially hide glitch layers
+      .set(glitchLayers.current, { opacity: 0 })
       .to(glitchLayers.current, {
         duration: 0.1,
         opacity: 1,
-        x: () => Math.random() * 20 - 10, // Random horizontal shifts
-        scaleX: () => 1 + Math.random() * 0.2, // Small distortion in width
-        scaleY: () => 1 + Math.random() * 0.1, // Small distortion in height
-        color: () => (Math.random() > 0.5 ? "#00ff00" : "#ff0000"), // Random color shift
+        x: () => Math.random() * 20 - 10,
+        scaleX: () => 1 + Math.random() * 0.2,
+        scaleY: () => 1 + Math.random() * 0.1,
+        color: () => (Math.random() > 0.5 ? "#111" : "#111"),
         repeat: 1,
         yoyo: true,
-        stagger: 0.05, // Add a slight stagger to create independent flickers
+        stagger: 0.05,
       })
       .to(glitchLayers.current, {
         opacity: 0,
         duration: 0.1,
-        delay: Math.random() * 1.2 + 0.5, // Random delay between glitches
+        delay: Math.random() * 1.2 + 0.5,
       });
 
-    // Random character substitution for 0 and 1
     const glitchChars = () => {
       const titleElement = titleRef.current;
       let originalText = titleElement.innerText;
@@ -94,9 +91,9 @@ function Hero() {
         }
         titleElement.innerText = chars.join("");
         setTimeout(() => {
-          titleElement.innerText = originalText; // Reset to original text after glitch
-        }, 50); // Short glitch duration
-      }, 2000); // Glitch every 2 seconds
+          titleElement.innerText = originalText;
+        }, 50);
+      }, 2000);
 
       return () => clearInterval(glitchInterval);
     };
@@ -111,44 +108,46 @@ function Hero() {
   };
 
   return (
-    <div className="min-h-screen" id="home">
-      <div className="mx-[5vw] md:mx-[10vw] my-[10vw] flex flex-col items-center md:flex-row relative">
-        <div className="grow">
-          <div className="relative text-center md:text-left">
-            {/* Main Title */}
+    <div className="h-[70vh] md:min-h-screen flex flex-col justify-between" id="home">
+      <div className="mx-[5vw] md:mx-[10vw] my-[5vh] md:my-[10vw] flex flex-col items-center md:flex-row relative flex-grow">
+        <div className="grow text-center md:text-left">
+          <div className="relative">
             <h1
               ref={titleRef}
-              className="font-black text-5xl sm:text-6xl md:text-[10vw] z-10 relative glitch-text leading-tight"
+              className="font-black text-4xl md:text-5xl lg:text-6xl xl:text-[10vw] text-black z-10 relative glitch-text leading-tight"
             >
               DEVFEST'24
             </h1>
-            {/* Glitch Layers */}
             <div
               ref={(el) => (glitchLayers.current[0] = el)}
-              className="glitch-layer text-5xl sm:text-6xl md:text-[10vw] text-red-500 absolute top-0 left-0"
+              className="glitch-layer text-4xl md:text-5xl lg:text-6xl xl:text-[10vw] text-red-500 absolute top-0 left-0"
             >
               DEVFEST'24
             </div>
             <div
               ref={(el) => (glitchLayers.current[1] = el)}
-              className="glitch-layer text-5xl sm:text-6xl md:text-[10vw] text-blue-500 absolute top-0 left-0"
+              className="glitch-layer text-4xl md:text-5xl lg:text-6xl xl:text-[10vw] text-blue-500 absolute top-0 left-0"
             >
               DEVFEST'24
             </div>
           </div>
-          {/* Subtitle Animation */}
           <p
-            ref={subTitleRef} // Reference for the subtitle
-            className="md:text-4xl text-sm sm:text-lg opacity-50 w-[80%] md:w-[70%] lg:w-[50%] mx-auto md:mx-0 mt-4"
+            ref={subTitleRef}
+            className="text-xs md:text-sm lg:text-lg xl:text-4xl opacity-50 w-[80%] md:w-[70%] lg:w-[50%] mx-auto md:mx-0 mt-4 text-black"
           >
             Brought to you by DEVS REC
           </p>
         </div>
-        <div className="flex flex-col md:mt-0 items-center md:inline gap-[10vw] text-xs sm:text-sm mt-20 md:mt-0">
-          <p className="md:mt-80 mt-10 text-center md:text-right md:w-44">
+        <div className="hidden  flex-col md:mt-0 items-center md:inline gap-[10vw] text-xs sm:text-sm mt-20">
+          <p className="md:mt-80 mt-10 text-black text-center md:text-right md:w-44">
             {formatTime(time)} <br /> <span>{time.getFullYear()}</span>
           </p>
         </div>
+      </div>
+      <div className="md:hidden text-center pb-4">
+        <p className="text-black text-sm">
+          {formatTime(time)} <br /> <span>{time.getFullYear()}</span>
+        </p>
       </div>
     </div>
   );

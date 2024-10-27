@@ -48,7 +48,7 @@ function String() {
         viewBox="0 0 1000 100"
         preserveAspectRatio="none"
       >
-        <path id={id.current} d={path} fill="none" stroke="white" strokeWidth="1" />
+        <path id={id.current} d={path} fill="none" stroke="black" strokeWidth="1" />
       </svg>
     </div>
   );

@@ -36,20 +36,20 @@ const Intro = () => {
       >
         <div className="flex flex-col">
           <div className="mb-10 about h-[11vw] w-[18 overflow-hidden flex bf ">
-            <span className="text-[10vw] inline-block y about1 ">A</span>
-            <span className="text-[10vw] inline-block y about2 ">b</span>
-            <span className="text-[10vw] inline-block y about3 ">o</span>
-            <span className="text-[10vw] inline-block y about4 ">u</span>
-            <span className="text-[10vw] inline-block y about5 ">t</span>
-            <span className="text-[10vw] inline-block y about6 md:ml-[2rem] ml-[1rem]">D</span>
-            <span className="text-[10vw] inline-block y about7 ">E</span>
-            <span className="text-[10vw] inline-block y about8 ">V</span>
-            <span className="text-[10vw] inline-block y about9 ">S</span>
+            <span className="text-[10vw] inline-block text-black y about1 ">A</span>
+            <span className="text-[10vw] inline-block text-black y about2 ">b</span>
+            <span className="text-[10vw] inline-block text-black y about3 ">o</span>
+            <span className="text-[10vw] inline-block text-black y about4 ">u</span>
+            <span className="text-[10vw] inline-block text-black y about5 ">t</span>
+            <span className="text-[10vw] inline-block text-black y about6 md:ml-[2rem] ml-[1rem]">D</span>
+            <span className="text-[10vw] inline-block text-black y about7 ">E</span>
+            <span className="text-[10vw] inline-block text-black y about8 ">V</span>
+            <span className="text-[10vw] inline-block text-black y about9 ">S</span>
           </div>
         </div>
 
         <div className="flex items-center para md:flex-row  ">
-          <div className="text-2xl md:text-[3vw] leading-none para ">
+          <div className="text-2xl text-black md:text-[3vw] leading-none para ">
             <AnimatedText
               text={`To create a dynamic community of developers who are passionate about technology and innovation, and who collaborate to solve real-world problems and create value for society`}
               id={3}
