@@ -26,15 +26,15 @@ function Navbar() {
 
   return (
     <>
-      <nav className="mx-[5vw] md:mx-[10vw] max-w-7xl py-8 flex justify-between border-b-2 border-black text-black items-center relative z-40">
-        <Link to="/" className="logo text-3xl">DEVS REC</Link>
+      <nav className="mx-4 md:mx-24 py-8 flex justify-between border-b-2 border-black text-black items-center relative z-40">
+        <Link to="/" className="logo text-4xl font-semibold">DEVS REC</Link>
 
         <ul className="hidden md:flex gap-12">
-            <Link to={'/'} key='12' className="group transition duration-300 text-lg">
-              Home
-              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-cyan-500"></span>
-            </Link>
-          {["About", "Events", "Contact Us"].map((item, index) => (
+          <Link to={'/'} key='12' className="group transition duration-300 text-lg">
+            Home
+            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-cyan-500"></span>
+          </Link>
+          {["Events", "Contact Us"].map((item, index) => (
             <Link to={`/${item.toLowerCase().replace(" ", "-")}`} key={index} className="group transition duration-300 text-lg">
               {item}
               <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-cyan-500"></span>
@@ -49,9 +49,8 @@ function Navbar() {
         </div>
 
         <div
-          className={`mobile-menu z-50 fixed top-0 left-0 w-full h-screen bg-black/90 flex flex-col items-center justify-center transform transition-transform ${
-            isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
-          }`}
+          className={`mobile-menu z-50 fixed top-0 left-0 w-full h-screen bg-black/90 flex flex-col items-center justify-center transform transition-transform ${isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+            }`}
         >
           <button onClick={toggleMobileMenu} className="absolute top-8 right-8 text-cyan-500 text-4xl focus:outline-none">
             <i className="bi bi-x-lg"></i>

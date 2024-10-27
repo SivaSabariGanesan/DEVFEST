@@ -1,5 +1,3 @@
-'use client'
-
 import React, { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 
@@ -22,7 +20,7 @@ function Hero() {
       { y: 0, opacity: 1, duration: 4, ease: "power3.out" }
     );
 
-    const flickerTimeline = gsap.timeline({ repeat: -1, repeatDelay: 0.5 });
+    const flickerTimeline = gsap.timeline();
     flickerTimeline
       .to(subTitleRef.current, {
         opacity: 0.3,
@@ -31,7 +29,7 @@ function Hero() {
         duration: 0.1,
         ease: "power2.inOut",
         yoyo: true,
-        repeat: 2,
+
       })
       .to(subTitleRef.current, {
         opacity: 1,
@@ -108,38 +106,38 @@ function Hero() {
   };
 
   return (
-    <div className="h-[70vh] md:min-h-screen flex flex-col justify-between" id="home">
-      <div className="mx-[5vw] md:mx-[10vw] my-[5vh] md:my-[10vw] flex flex-col items-center md:flex-row relative flex-grow">
-        <div className="grow text-center md:text-left">
+    <div className="h-screen flex flex-col justify-between" id="home">
+      <div className="mx-6 md:mx-16 pt-40 md:pt-60 flex md:flex-row relative flex-grow">
+        <div className="w-full text-left">
           <div className="relative">
             <h1
               ref={titleRef}
-              className="font-black text-4xl md:text-5xl lg:text-6xl xl:text-[10vw] text-black z-10 relative glitch-text leading-tight"
+              className="font-black text-8xl md:text-[8rem] lg:text-[12rem] text-black z-10 relative glitch-text leading-tight"
             >
-              DEVFEST'24
+              DEV<br className="block md:hidden" />FEST<br className="block md:hidden" />'24
             </h1>
             <div
               ref={(el) => (glitchLayers.current[0] = el)}
-              className="glitch-layer text-4xl md:text-5xl lg:text-6xl xl:text-[10vw] text-red-500 absolute top-0 left-0"
+              className="glitch-layer text-8xl md:text-[8rem] lg:text-[12rem] text-red-500 absolute top-0 left-0"
             >
-              DEVFEST'24
+              DEV<br className="block md:hidden" />FEST<br className="block md:hidden" />'24
             </div>
             <div
               ref={(el) => (glitchLayers.current[1] = el)}
-              className="glitch-layer text-4xl md:text-5xl lg:text-6xl xl:text-[10vw] text-blue-500 absolute top-0 left-0"
+              className="glitch-layer text-8xl md:text-[8rem] lg:text-[12rem] text-blue-500 absolute top-0 left-0"
             >
-              DEVFEST'24
+              DEV<br className="block md:hidden" />FEST<br className="block md:hidden" />'24
             </div>
           </div>
           <p
             ref={subTitleRef}
-            className="text-xs md:text-sm lg:text-lg xl:text-4xl opacity-50 w-[80%] md:w-[70%] lg:w-[50%] mx-auto md:mx-0 mt-4 text-black"
+            className="text-sm md:text-lg lg:text-xl xl:text-2xl opacity-60  text-black"
           >
             Brought to you by DEVS REC
           </p>
         </div>
-        <div className="hidden  flex-col md:mt-0 items-center md:inline gap-[10vw] text-xs sm:text-sm mt-20">
-          <p className="md:mt-80 mt-10 text-black text-center md:text-right md:w-44">
+        <div className="hidden md:flex flex-col mt-10 items-center gap-10 text-xs sm:text-sm">
+          <p className="text-black text-center md:text-right md:w-44">
             {formatTime(time)} <br /> <span>{time.getFullYear()}</span>
           </p>
         </div>

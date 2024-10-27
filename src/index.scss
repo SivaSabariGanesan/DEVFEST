@@ -10,6 +10,7 @@
 @tailwind components;
 @tailwind utilities;
 @import "/node_modules/mouse-follower/src/scss/index.scss";
+
 * {
   font-family: "font1", sans-serif;
   padding: 0;
@@ -20,15 +21,17 @@
 @font-face {
   font-family: font1;
   src: url("./assets/fonts/TT\ Firs\ Neue\ Trial\ Medium.ttf");
-  
+
 }
+
 body {
   background-color: #c3ff00;
   color: rgb(255, 255, 255);
 }
- .sG{
+
+.sG {
   font-family: "Space Grotesk";
- }
+}
 
 // .mf-cursor {
 //   mix-blend-mode: difference;
