@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar';
 import a from "../assets/a.jpeg"
 import b from "../assets/b.jpeg"
 import bh from "../assets/bhaskar.jpeg"
-import de from "../assets/devslogo.png"
+import de from "../assets/devs-w.png"
 import rec from "../assets/rec-logo.png"
 import tec from "../assets/tec-logo-white.png"
 import iic from "../assets/iic-logo.png"
