@@ -201,7 +201,7 @@ export default function EventDetails() {
 
   return (
     // <div className="text-black absolute inset-0 bg-[url('https://imgs.search.brave.com/BV1c5Y4eiL2bZjbJ6IfDmRVCSpmp7InWjAp1u6MPYmU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDg3MTMw/OTEuanBn')] bg-cover bg-center ">
-    <div className={` absolute inset-0 bg-[url(https://img.freepik.com/premium-photo/abstract-circuit-board-with-yellow-lines_332713-26461.jpg?semt=ais_hybrid)] bg-cover bg-center`}>
+    <div className={` absolute inset-0 bg-[#c3ff00] bg-cover bg-center`}>
       <Navbar />
       <div className="container mx-auto mt-8 px-4">
         <style jsx>{`
