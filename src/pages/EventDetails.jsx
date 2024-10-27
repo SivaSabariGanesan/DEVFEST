@@ -115,6 +115,30 @@ const eventsWithId = [
     }
   ];
 
+  const CyberpunkButton = ({ children, onClick }) => {
+    const [isHovered, setIsHovered] = useState(false);
+  
+    return (
+      <button
+        className="bg-[#c3ff00] text-black px-4 py-2 font-bold border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-black hover:text-[#c3ff00] hover:border-[#c3ff00] transition-all duration-300"
+        style={{
+          transform: isHovered ? 'translate(-2px, -2px)' : 'none',
+          boxShadow: isHovered ? '6px 6px 0px 0px rgba(0,0,0,1)' : '4px 4px 0px 0px rgba(0,0,0,1)',
+        }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={onClick}
+      >
+        {children}
+      </button>
+    );
+  };
+
+  const handleRegister = () => {
+    // Add registration logic here
+    alert('Registration functionality to be implemented');
+  };
+
 const CyberpunkCard = ({ children, className = "" }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -165,15 +189,18 @@ export default function EventDetails() {
 
   if (!event) {
     return (
-      <>
+      <div className='text-black'>
         <Navbar />
         <div className="container mx-auto mt-8 text-center text-[#c3ff00]">Event not found</div>
-      </>
+      </div>
     );
   }
 
+  const img = 'https://imgs.search.brave.com/JplYfuWptHtOq9vJVICw5EVoQp2gf4Ao_LSg-nQuwog/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA3Lzc3LzY3LzAy/LzM2MF9GXzc3NzY3/MDI4N19xYU5mWnBn/akYwMFd4eUY4V2ti/RFc3S245YkcxSmRv/cS5qcGc';
+
   return (
-    <div className="bg-black min-h-screen text-[#c3ff00] font-mono">
+    // <div className="text-black absolute inset-0 bg-[url('https://imgs.search.brave.com/BV1c5Y4eiL2bZjbJ6IfDmRVCSpmp7InWjAp1u6MPYmU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDg3MTMw/OTEuanBn')] bg-cover bg-center ">
+    <div className={` absolute inset-0 bg-[url(https://img.freepik.com/premium-photo/abstract-circuit-board-with-yellow-lines_332713-26461.jpg?semt=ais_hybrid)] bg-cover bg-center`}>
       <Navbar />
       <div className="container mx-auto mt-8 px-4">
         <style jsx>{`
@@ -210,8 +237,11 @@ export default function EventDetails() {
                 </h1>
                 <p className="text-lg">{event.type}</p>
               </div>
-              <CyberpunkBadge>{event.eventType}</CyberpunkBadge>
+              <CyberpunkButton onClick={handleRegister}>Register Now</CyberpunkButton>
             </div>
+            <div className="flex items-center gap-4">
+                <CyberpunkBadge>{event.eventType}</CyberpunkBadge>
+              </div>
           </div>
           <div className="space-y-6">
             <div className="flex items-center gap-2">

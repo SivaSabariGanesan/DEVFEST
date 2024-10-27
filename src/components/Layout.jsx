@@ -29,7 +29,7 @@ function Layout() {
       <String />
       {/* <Tools /> */}
       <Projects />
-      <Social />
+      {/* <Social /> */}
       {/* <Education/> */}
     </div>
   );

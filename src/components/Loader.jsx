@@ -62,7 +62,7 @@ function Loader() {
       <div className="relative m-0 p-0">
         <div
           id="intro-slider"
-          className="m-0 p-0 absolute h-screen w-full z-50 flex flex-col justify-center items-center bg-[#eee] border-b-2 border-[#c3ff00]"
+          className="m-0 p-0 absolute h-screen w-full z-50 flex flex-col justify-center items-center bg-[#c3ff00] border-b-2 border-[#c3ff00]"
         >
           {/* <h1 className="text-[9vw] bg-transparent text-[#c3ff00]" id="title1">
             Gamer

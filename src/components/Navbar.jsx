@@ -28,22 +28,22 @@ function Navbar() {
         <Link to="/" className="logo text-3xl">DEVS REC</Link>
 
         <ul className="hidden md:flex gap-12">
-          <a href="#home" className="group transition duration-300">
+          <Link to="/" className="group transition duration-300">
             Home
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
-          </a>
+          </Link>
           <a href="#about" className="group transition duration-300">
             About
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
           </a>
-          <a href="#events" className="group transition duration-300">
+          <Link to="/events" className="group transition duration-300">
             Events
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
-          </a>
-          <a href="#contact" className="group transition duration-300">
+          </Link>
+          <Link to="/contact-us" className="group transition duration-300">
             Contact Us
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
-          </a>
+          </Link>
         </ul>
 
         <div className="md:hidden flex items-center">
@@ -58,10 +58,10 @@ function Navbar() {
           }`}
         >
           <ul className="flex flex-col gap-8 text-center text-white text-3xl">
-            <a href="#home" onClick={toggleMobileMenu}>Home</a>
-            <a href="#about" onClick={toggleMobileMenu}>About</a>
-            <a href="#events" onClick={toggleMobileMenu}>Events</a>
-            <a href="#contact" onClick={toggleMobileMenu}>Contact Us</a>
+            <Link to="/" onClick={toggleMobileMenu}>Home</Link>
+            <a to="#about" onClick={toggleMobileMenu}>About</a>
+            <Link to="/events" onClick={toggleMobileMenu}>Events</Link>
+            <Link to="/contact-us" onClick={toggleMobileMenu}>Contact Us</Link>
           </ul>
         </div>
       </nav>

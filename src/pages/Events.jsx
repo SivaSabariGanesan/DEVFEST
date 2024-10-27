@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnimatedPinDemo } from "../components/Card3d";
+import { CyberpunkEventCard } from "../components/Card3d";
 import Navbar from '../components/Navbar';
 
 const events = [
@@ -115,16 +115,17 @@ const events = [
 
 export const Events = () => {
   return (
-    <div className="cursor-none min-h-screen bg-black text-[#c3ff00]">
+    <div className="cursor-none min-h-screen bg-[#c3ff00] bg-center text-black">
       <Navbar />
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl md:text-6xl text-[#c3ff00] lg:text-[6vw] font-bold text-center mb-16 underline">
+      <div className="container mx-auto px-4 py-4 md:py-8">
+        <h1 className="text-4xl md:text-6xl text-black lg:text-[6vw] font-bold text-center mb-8 md:mb-16 underline">
           EVENTS
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 mx-6 lg:grid-cols-3 gap-8 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {events.map(event => (
-            <div key={event.id} className="w-full max-w-sm my-36">
-              <AnimatedPinDemo
+            <div key={event.id} className="w-full my-4">
+              <CyberpunkEventCard
+                event = {event}
                 idh={event.id}
                 evnt={event.eventName}
                 obj={event.rounds[0].objective}
