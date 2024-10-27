@@ -112,26 +112,26 @@ function Hero() {
 
   return (
     <div className="min-h-screen" id="home">
-      <div className="mx-[5vw] md:mx-[10vw] md:my-36 my-[18vw] md:flex relative">
+      <div className="mx-[5vw] md:mx-[10vw] my-[10vw] flex flex-col items-center md:flex-row relative">
         <div className="grow">
-          <div className="relative">
+          <div className="relative text-center md:text-left">
             {/* Main Title */}
             <h1
               ref={titleRef}
-              className="font-black text-7xl md:text-[12vw] z-10 relative glitch-text"
+              className="font-black text-5xl sm:text-6xl md:text-[10vw] z-10 relative glitch-text leading-tight"
             >
               DEVFEST'24
             </h1>
             {/* Glitch Layers */}
             <div
               ref={(el) => (glitchLayers.current[0] = el)}
-              className="glitch-layer text-7xl md:text-[12vw] text-red-500 absolute top-0 left-0"
+              className="glitch-layer text-5xl sm:text-6xl md:text-[10vw] text-red-500 absolute top-0 left-0"
             >
               DEVFEST'24
             </div>
             <div
               ref={(el) => (glitchLayers.current[1] = el)}
-              className="glitch-layer text-7xl md:text-[12vw] text-blue-500 absolute top-0 left-0"
+              className="glitch-layer text-5xl sm:text-6xl md:text-[10vw] text-blue-500 absolute top-0 left-0"
             >
               DEVFEST'24
             </div>
@@ -139,14 +139,14 @@ function Hero() {
           {/* Subtitle Animation */}
           <p
             ref={subTitleRef} // Reference for the subtitle
-            className="md:text-4xl opacity-50 w-[80%] md:w-[70%] lg:w-[50%]"
+            className="md:text-4xl text-sm sm:text-lg opacity-50 w-[80%] md:w-[70%] lg:w-[50%] mx-auto md:mx-0 mt-4"
           >
             Brought to you by DEVS REC
           </p>
         </div>
-        <div className="flex md:inline gap-[15vw] text-sm mt-20 md:mt-0">
-          <p className="md:mt-80 mt-40 md:text-right md:w-44">
-            {formatTime(time)} <br /> <span>{time.getFullYear()}</span>{" "}
+        <div className="flex flex-col md:mt-0 items-center md:inline gap-[10vw] text-xs sm:text-sm mt-20 md:mt-0">
+          <p className="md:mt-80 mt-10 text-center md:text-right md:w-44">
+            {formatTime(time)} <br /> <span>{time.getFullYear()}</span>
           </p>
         </div>
       </div>
