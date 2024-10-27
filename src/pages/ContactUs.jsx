@@ -8,6 +8,7 @@ import de from "../assets/devs-w.png"
 import rec from "../assets/rec-logo.png"
 import tec from "../assets/tec-logo-white.png"
 import iic from "../assets/iic-logo.png"
+import { Footer } from '../components/Footer';
 
 const CyberpunkCard = ({ children, className = "" }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -204,6 +205,7 @@ const CyberpunkOrganizers = () => {
       <div className="fixed bottom-4 right-4 z-20">
         <Zap className="w-8 h-8 text-[#c3ff00] animate-pulse" />
       </div>
+      <Footer />
     </div>
   );
 };

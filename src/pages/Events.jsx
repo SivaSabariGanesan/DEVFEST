@@ -1,6 +1,7 @@
 import React from 'react';
 import { CyberpunkEventCard } from "../components/Card3d";
 import Navbar from '../components/Navbar';
+import { Footer } from '@/components/Footer';
 
 const events = [
   {
@@ -136,6 +137,7 @@ export const Events = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -24,26 +24,22 @@ const GlitchText = ({ children }) => {
   );
 };
 
-const FAQItem = ({ question, answer, className }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className={`mb-4 ${className}`}>
-      <button
-        className="flex justify-between items-center w-full text-left p-4 bg-[#c3ff00] text-black border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:bg-black hover:text-[#c3ff00]"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <GlitchText>{question}</GlitchText>
-        {isOpen ? <ChevronUp className="flex-shrink-0 ml-2" /> : <ChevronDown className="flex-shrink-0 ml-2" />}
-      </button>
-      {isOpen && (
-        <div className="p-4 bg-black text-[#c3ff00] border-2 border-t-0 border-[#c3ff00]">
-          {answer}
-        </div>
-      )}
-    </div>
-  );
-};
+const FAQItem = ({ question, answer, isOpen, onClick, className }) => (
+  <div className={`mb-4 ${className}`}>
+    <button
+      className="flex justify-between items-center w-full text-left p-4 bg-[#c3ff00] text-black border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:bg-black hover:text-[#c3ff00]"
+      onClick={onClick}
+    >
+      <GlitchText>{question}</GlitchText>
+      {isOpen ? <ChevronUp className="flex-shrink-0 ml-2" /> : <ChevronDown className="flex-shrink-0 ml-2" />}
+    </button>
+    {isOpen && (
+      <div className="p-4 bg-black text-[#c3ff00] border-2 border-t-0 border-[#c3ff00]">
+        {answer}
+      </div>
+    )}
+  </div>
+);
 
 const Education = () => {
   useGSAP(() => {
@@ -65,6 +61,8 @@ const Education = () => {
       ease: "power1.inOut",
     });
   });
+
+  const [currentOpenIndex, setCurrentOpenIndex] = useState(null);
 
   const faqData = [
     {
@@ -105,6 +103,8 @@ const Education = () => {
               key={index} 
               question={item.question} 
               answer={item.answer} 
+              isOpen={currentOpenIndex === index}
+              onClick={() => setCurrentOpenIndex(currentOpenIndex === index ? null : index)}
               className={`faq${index + 1}`}
             />
           ))}

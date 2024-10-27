@@ -32,7 +32,7 @@ function Navbar() {
             Home
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
           </Link>
-          <a href="#about" className="group transition duration-300">
+          <a href="/#about" className="group transition duration-300">
             About
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
           </a>
@@ -59,7 +59,7 @@ function Navbar() {
         >
           <ul className="flex flex-col gap-8 text-center text-white text-3xl">
             <Link to="/" onClick={toggleMobileMenu}>Home</Link>
-            <a to="#about" onClick={toggleMobileMenu}>About</a>
+            <a to="/#about" onClick={toggleMobileMenu}>About</a>
             <Link to="/events" onClick={toggleMobileMenu}>Events</Link>
             <Link to="/contact-us" onClick={toggleMobileMenu}>Contact Us</Link>
           </ul>

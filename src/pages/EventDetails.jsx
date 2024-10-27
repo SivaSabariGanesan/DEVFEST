@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Clock, Users, User, Zap } from "lucide-react";
 import Navbar from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
 
 // Event data (unchanged)
 const eventsWithId = [
@@ -227,7 +228,7 @@ export default function EventDetails() {
             animation: glitch2 0.3s infinite linear alternate-reverse;
           }
         `}</style>
-        <CyberpunkCard className="max-w-4xl mx-auto">
+        <CyberpunkCard className="mb-12 max-w-4xl mx-auto">
           <div className="border-b-2 border-black pb-4 mb-4">
             <div className="flex justify-between items-center flex-wrap gap-4">
               <div>
@@ -287,6 +288,7 @@ export default function EventDetails() {
           </div>
         </CyberpunkCard>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -9,6 +9,7 @@ import Projects from "./Events";
 import Education from "./Education";
 import Tools from "./Tools";
 import Social from "./Socials";
+import { Footer } from "./Footer";
 
 function Layout() {
   return (
@@ -31,6 +32,7 @@ function Layout() {
       <Projects />
       {/* <Social /> */}
       <Education/>
+      <Footer />
     </div>
   );
 }
