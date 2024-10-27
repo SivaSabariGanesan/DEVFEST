@@ -448,7 +448,8 @@ export default function EventDetails() {
                 </h1>
                 <p className="text-lg">{event.type}</p>
               </div>
-              <CyberpunkButton onClick={handleRegister}>Register Now</CyberpunkButton>
+              <h1 className='text-xl'>Registrations available soon</h1>
+              {/* <CyberpunkButton onClick={handleRegister}>Register Now</CyberpunkButton> */}
             </div>
             <div className="flex items-center gap-4">
                 <CyberpunkBadge>{event.eventType}</CyberpunkBadge>
