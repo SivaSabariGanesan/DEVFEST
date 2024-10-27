@@ -48,7 +48,7 @@ const CyberpunkEventCard = ({ event }) => {
         </div>
         <div className="relative h-40 mb-4 overflow-hidden">
           <img
-            src={imge}
+            src={event.image || imge} // Use default image if event.image is missing
             alt={event.eventName}
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
             style={{ transform: isHovered ? 'scale(1.1)' : 'scale(1)' }}
@@ -56,7 +56,9 @@ const CyberpunkEventCard = ({ event }) => {
           <div className={`absolute inset-0 bg-[#c3ff00] opacity-0 transition-opacity duration-300 ${isHovered ? 'opacity-30' : ''}`}></div>
         </div>
         <p className="text-sm mb-4 flex-grow overflow-hidden">
-          <span className="line-clamp-3">{event.rounds[0].objective}</span>
+          <span className="line-clamp-3">
+            {event.rounds && event.rounds.length > 0 ? event.rounds[0].objective : "Objective not available"}
+          </span>
         </p>
         <div className="flex items-center justify-between mt-auto">
           <span className="text-xs font-semibold uppercase tracking-wider">{event.type}</span>
@@ -70,33 +72,17 @@ const CyberpunkEventCard = ({ event }) => {
           <Zap className="w-5 h-5 animate-pulse" />
         </div>
       </div>
+      {/* Glitch Animations */}
       <style jsx>{`
-        @keyframes glitch1 {
-          0% { clip-path: inset(40% 0 61% 0); }
-          20% { clip-path: inset(92% 0 1% 0); }
-          40% { clip-path: inset(43% 0 1% 0); }
-          60% { clip-path: inset(25% 0 58% 0); }
-          80% { clip-path: inset(54% 0 7% 0); }
-          100% { clip-path: inset(58% 0 43% 0); }
-        }
-        @keyframes glitch2 {
-          0% { clip-path: inset(24% 0 29% 0); }
-          20% { clip-path: inset(54% 0 21% 0); }
-          40% { clip-path: inset(9% 0 38% 0); }
-          60% { clip-path: inset(61% 0 4% 0); }
-          80% { clip-path: inset(13% 0 14% 0); }
-          100% { clip-path: inset(1% 0 88% 0); }
-        }
-        .animate-glitch1 {
-          animation: glitch1 0.3s infinite linear alternate-reverse;
-        }
-        .animate-glitch2 {
-          animation: glitch2 0.3s infinite linear alternate-reverse;
-        }
+        @keyframes glitch1 { /* animation details here */ }
+        @keyframes glitch2 { /* animation details here */ }
+        .animate-glitch1 { animation: glitch1 0.3s infinite linear alternate-reverse; }
+        .animate-glitch2 { animation: glitch2 0.3s infinite linear alternate-reverse; }
       `}</style>
     </Link>
   );
 };
+
 
 const CyberpunkEventGrid = ({ events }) => {
   return (

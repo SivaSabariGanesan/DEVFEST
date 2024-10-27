@@ -1,14 +1,34 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Instagram, Linkedin, Phone, Zap } from 'lucide-react';
 import Navbar from '@/components/Navbar';
-import a from "../assets/a.jpeg"
-import b from "../assets/b.jpeg"
-import bh from "../assets/bhaskar.jpeg"
-import de from "../assets/devs-w.png"
-import rec from "../assets/rec-logo.png"
-import tec from "../assets/tec-logo-white.png"
-import iic from "../assets/iic-logo.png"
-import { Footer } from '../components/Footer';
+import a from "@/assets/a.jpeg"
+import b from "@/assets/b.jpeg"
+import bh from "@/assets/bhaskar.jpeg"
+import de from "@/assets/devs-w.png"
+import rec from "@/assets/rec-logo.png"
+import tec from "@/assets/tec-logo-white.png"
+import iic from "@/assets/iic-logo.png"
+import { Footer } from '@/components/Footer';
+import { useNavigate } from 'react-router-dom';
+
+const CyberpunkButton = ({ children, onClick }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <button
+      className="bg-[#c3ff00] text-black px-4 py-2 font-bold border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-black hover:text-[#c3ff00] hover:border-[#c3ff00] transition-all duration-300"
+      style={{
+        transform: isHovered ? 'translate(-2px, -2px)' : 'none',
+        boxShadow: isHovered ? '6px 6px 0px 0px rgba(0,0,0,1)' : '4px 4px 0px 0px rgba(0,0,0,1)',
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};
 
 const CyberpunkCard = ({ children, className = "" }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -68,55 +88,16 @@ const CyberpunkImage = ({ src, alt, className }) => {
 };
 
 const CyberpunkOrganizers = () => {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const particles = [];
-    for (let i = 0; i < 100; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 2 + 1,
-        speedX: (Math.random() - 0.5) * 2,
-        speedY: (Math.random() - 0.5) * 2
-      });
-    }
-
-    let animationFrameId;
-
-    function animate() {
-      animationFrameId = requestAnimationFrame(animate);
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        ctx.fillStyle = '#c3ff00';
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fill();
-
-        p.x += p.speedX;
-        p.y += p.speedY;
-
-        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-      });
-    }
-
-    animate();
-
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
+  const navigate = useNavigate();
 
   return (
     <div className="bg-[#c3ff00] min-h-screen text-black font-mono">
-      <canvas ref={canvasRef} className="fixed inset-0 z-0"></canvas>
       <Navbar />
+      <div className='mx-[5vw] my-6 md:mx-[10vw]'>
+        <CyberpunkButton onClick={() => navigate(-1)}>
+          <i className="bi bi-box-arrow-left mr-1"></i> Back
+        </CyberpunkButton>
+      </div>
       <div className="relative z-10 container mx-auto max-w-4xl p-4">
         <style jsx>{`
           @keyframes glitch1 {
@@ -152,7 +133,7 @@ const CyberpunkOrganizers = () => {
               <CyberpunkImage
                 key={index}
                 src={logo}
-                alt={logo}
+                alt={`Logo ${index + 1}`}
                 className="max-h-16 sm:max-h-20 w-auto rounded-lg overflow-hidden"
               />
             ))}
@@ -203,7 +184,7 @@ const CyberpunkOrganizers = () => {
         </CyberpunkCard>
       </div>
       <div className="fixed bottom-4 right-4 z-20">
-        <Zap className="w-8 h-8 text-[#c3ff00] animate-pulse" />
+        <Zap className="w-8 h-8 text-black animate-pulse" />
       </div>
       <Footer />
     </div>
