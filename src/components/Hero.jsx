@@ -16,19 +16,19 @@ export default function Component() {
     const updateTime = () => {
       const now = new Date()
       setCurrentTime(now)
-      
+
       const difference = eventDate.getTime() - now.getTime()
-      
+
       if (difference > 0) {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24))
         const hours = Math.floor((difference / (1000 * 60 * 60)) % 24)
         const minutes = Math.floor((difference / 1000 / 60) % 60)
         const seconds = Math.floor((difference / 1000) % 60)
-        
+
         setCountdown({ days, hours, minutes, seconds })
       }
     }
-    
+
     const intervalId = setInterval(updateTime, 1000)
     return () => clearInterval(intervalId)
   }, [])
@@ -103,13 +103,13 @@ export default function Component() {
   }
 
   return (
-    <div className="min-h-screen bg-transparent text-black flex items-center justify-center">
+    <div className="min-h-screen bg-transparent text-black flex pt-[8vh] md:items-center justify-center">
       <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center md:text-left">
           <div className="relative inline-block">
             <h1
               ref={titleRef}
-              className="font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-none md:leading-tight"
+              className="font-black text-[5.5rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-none md:leading-tight"
             >
               <span className="md:hidden">
                 DEV
@@ -126,7 +126,7 @@ export default function Component() {
                 ref={(el) => (glitchLayers.current[index] = el)}
                 className="glitch-layer absolute top-0 left-0 w-full h-full pointer-events-none"
               >
-                <span className="font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-none md:leading-tight opacity-50">
+                <span className="font-black text-[5.5rem]  sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-none md:leading-tight opacity-50">
                   <span className="md:hidden">
                     DEV
                     <br />
