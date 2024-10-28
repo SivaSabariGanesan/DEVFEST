@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Clock, Users, Zap, Terminal, Cpu } from 'lucide-react'
 import { cn } from "@/lib/utils"
-import imge  from '@/assets/OPENMIC.png'
-
+import imge from '@/assets/OPENMIC.png'
 
 const GlitchText = ({ children }) => {
   const [isHovered, setIsHovered] = useState(false)
@@ -28,12 +27,20 @@ const GlitchText = ({ children }) => {
 const CyberpunkEventCard = ({ event, dur, im }) => {
   const [isHovered, setIsHovered] = useState(false)
 
+  const truncateText = (text, maxWords) => {
+    const words = text.split(' ')
+    if (words.length > maxWords) {
+      return words.slice(0, maxWords).join(' ') + '...'
+    }
+    return text
+  }
+
   return (
     <Link to={`./${event.id}`} className="block w-full">
       <div 
         className={cn(
           "bg-[#c3ff00] text-black border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-4 transition-all duration-300",
-          "sm:h-[480px] md:h-[500px] lg:h-[520px]", // Decreased height for larger screens
+          "sm:h-[440px] md:h-[460px] lg:h-[480px]", // Further decreased height for larger screens
           "flex flex-col",
           isHovered && "translate-x-[-2px] translate-y-[-2px]"
         )}
@@ -55,7 +62,7 @@ const CyberpunkEventCard = ({ event, dur, im }) => {
         </div>
         <div className="relative mb-4 overflow-hidden" style={{ paddingTop: '56.25%' }}> {/* 16:9 aspect ratio */}
           <img
-            src={imge || event.image || "/placeholder.svg?height=720&width=1280"} // Use default image if event.image is missing
+            src={event.image || imge} // Use default image if event.image is missing
             alt={event.eventName}
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
             style={{ transform: isHovered ? 'scale(1.1)' : 'scale(1)' }}
@@ -66,10 +73,10 @@ const CyberpunkEventCard = ({ event, dur, im }) => {
           )}></div>
         </div>
         <div className="flex-grow flex flex-col justify-between">
-          <div className="mb-4">
+          <div className="mb-2"> {/* Reduced margin-bottom */}
             <p className="text-sm overflow-hidden">
-              <span className="sm:line-clamp-3 md:line-clamp-3 lg:line-clamp-4"> {/* Reduced line clamp for larger screens */}
-                {event.rounds && event.rounds.length > 0 ? event.rounds[0].objective : "Objective not available"}
+              <span className="line-clamp-3"> {/* Always use 2 lines for consistency */}
+                {truncateText(event.overall_overview || '', 30)}
               </span>
             </p>
           </div>
@@ -81,7 +88,7 @@ const CyberpunkEventCard = ({ event, dur, im }) => {
                 <span className="group-hover:text-[#00ffff] transition-colors duration-300">{event.day} - {dur}</span>
               </div>
             </div>
-            <div className="mt-4 flex items-center justify-between border-t-2 border-black pt-2">
+            <div className="mt-2 flex items-center justify-between border-t-2 border-black pt-2"> {/* Reduced margin-top */}
               <span className="text-sm font-semibold">{event.eventType}</span>
               <Zap className="w-5 h-5 animate-pulse" />
             </div>

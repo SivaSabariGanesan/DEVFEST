@@ -178,7 +178,7 @@ const CyberpunkOrganizers = () => {
             </a>
             <a href="tel:+1234567890" className="flex items-center gap-2 hover:text-[#ff00ff] transition-colors group">
               <Phone className="w-6 h-6 group-hover:animate-pulse" />
-              <span>+1 (234) 567-890</span>
+              <span>+91 8056201341</span>
             </a>
           </div>
         </CyberpunkCard>
