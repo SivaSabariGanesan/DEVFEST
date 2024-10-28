@@ -146,7 +146,7 @@ const CyberpunkOrganizers = () => {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[
-              { name: "Dr P Revathy", title: "HoD, CSD", image: a },
+              { name: "Dr P Revathy", title: "Professor", image: a },
               { name: "Ms. Sorna Shanthi", title: "AOP, CSE", image: b },
               { name: "Dr. K. Bhaskar", title: "HOD, AUTOMOBILE", image: bh }
             ].map((coordinator, index) => (

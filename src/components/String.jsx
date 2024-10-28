@@ -14,7 +14,7 @@ function String() {
       attr: { d: path },
       duration: 1,
       fill: "none",
-      stroke: "white",
+      stroke: "black",
       strokeWidth: "1",
       ease: "elastic.out(.5,0.1)",
     });

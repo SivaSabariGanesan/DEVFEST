@@ -40,6 +40,38 @@ body {
 $mf-color-base: #000000 !default;
 $mf-color-text: #ffffff !default;
 
+// .mf-cursor {
+//   $root: &;
+
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: 250;
+
+//   direction: ltr;
+//   contain: layout style size;
+//   pointer-events: none;
+
+//   transition: opacity 0.3s, color 0.4s;
+//   // mix-blend-mode: difference;
+
+//   &:before {
+//     content: "";
+//     position: absolute;
+//     top: -80px;
+//     left: -80px;
+//     display: block;
+//     width: 160px;
+//     height: 160px;
+//     // transform:scale(0.2);
+
+//     background: currentColor;
+//     border-radius: 50%;
+//     // border: solid rgb(255, 255, 255) 40px;
+
+//     transition: transform 0.25s ease-in-out, opacity 0.1s;
+//   }
+
 .mf-cursor {
   $root: &;
 
@@ -53,7 +85,9 @@ $mf-color-text: #ffffff !default;
   pointer-events: none;
 
   transition: opacity 0.3s, color 0.4s;
-  // mix-blend-mode: difference;
+
+  // Set cursor color to black
+  color: black; // This will apply to the cursor itself
 
   &:before {
     content: "";
@@ -63,11 +97,9 @@ $mf-color-text: #ffffff !default;
     display: block;
     width: 160px;
     height: 160px;
-    // transform:scale(0.2);
 
-    background: currentColor;
+    background: black; // Set the background to black
     border-radius: 50%;
-    // border: solid rgb(255, 255, 255) 40px;
 
     transition: transform 0.25s ease-in-out, opacity 0.1s;
   }

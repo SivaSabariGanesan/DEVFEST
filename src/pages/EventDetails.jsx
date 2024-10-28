@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Clock, Users, User, Zap } from "lucide-react";
 import Navbar from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
@@ -64,7 +64,7 @@ const eventsWithId = [
     "id": "3",
     "eventName": "PROMPTY",
     "type": "Technical",
-    "eventType": "Team (2-3)",
+    "eventType": "Team (2)",
     "duration": "2 hours",
     "timeSlot": "12:30PM - 2:30PM",
     "day": "Day 1",
@@ -91,10 +91,34 @@ const eventsWithId = [
     "callManager": "Livesh"
   },
   {
+    "id": "15",
+    "eventName": "PIXEL WARS",
+    "type": "Technical",
+    "eventType": "Team (1-2)",
+    "duration": "2 hours",
+    "timeSlot": "12:30PM - 2:30PM",
+    "day": "Day 1",
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "roundDescription": "Online Poster Competition",
+        "timeLimit": "15 mins + 5 mins submission",
+        "objective": "Participants must use design tools such as Canva, Photoshop, Illustrator, or any other software, although Photoshop and Illustrator are highly preferred. The size of the file must not exceed 10MB."
+      },
+      {
+        "roundNumber": 2,
+        "roundDescription": "Offline Poster Competition",
+        "timeLimit": "15 mins + 10 mins validation",
+        "objective": "In this round, you will create a poster based on the given theme in offline mode. You may use any design software. Although Photoshop and Illustrator are highly preferred. The size of the file must not exceed 10MB."
+      }
+    ],
+    "callManager": "Darshan"
+  },
+  {
     "id": "4",
     "eventName": "FRONTEND BATTLE",
     "type": "Technical",
-    "eventType": "Team (2-3)",
+    "eventType": "Team (2)",
     "duration": "2 hours",
     "timeSlot": "9AM - 11AM",
     "day": "Day 1",
@@ -103,7 +127,7 @@ const eventsWithId = [
         "roundNumber": 1,
         "roundDescription": "Clone a classic static website",
         "timeLimit": "1 hour 15 mins",
-        "objective": "Replicate a classic static website’s design with focus on visual elements."
+        "objective": "Replicate a classic static website's design with focus on visual elements."
       },
       {
         "roundNumber": 2,
@@ -282,7 +306,7 @@ const eventsWithId = [
     "eventName": "SCRIPTED BY AI",
     "type": "Technical",
     "day": "Day 2",
-    "eventType": "Team (2-4)",
+    "eventType": "Team (2)",
     "duration": "1 hour",
     "timeSlot": "12:30PM - 1:30PM",
     "rounds": [
@@ -318,6 +342,49 @@ const eventsWithId = [
       }
     ],
     "callManager": "Nithya",
+    "price": "INR100"
+  },
+  {
+    "id": "14",
+    "eventName": "MicroSaaS Workshop",
+    "type": "Workshop",
+    "eventType": "Workshop",
+    "duration": "9AM - 12:30PM",
+    "timeSlot": "9AM - 12:30PM",
+    "day": "Day 1",
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "roundDescription": "Welcome & Introduction",
+        "timeLimit": "9:00AM - 9:30AM",
+        "objective": "How do software companies make money? SaaS Introduction, Examples, MicroSaaS Introduction, Examples, Opportunity in MicroSaaS, Current myths around MicroSaaS"
+      },
+      {
+        "roundNumber": 2,
+        "roundDescription": "Validating MicroSaaS Ideas",
+        "timeLimit": "9:30AM - 10:00AM",
+        "objective": "Identifying niche markets and potential MicroSaaS ideas. Tools and techniques for market research and validating ideas. Understanding the audience"
+      },
+      {
+        "roundNumber": 3,
+        "roundDescription": "Developing an MVP Mindset",
+        "timeLimit": "10:00 AM - 10:30 AM",
+        "objective": "How to think about an MVP, Why is MVP important, How to choose the right model for your MicroSaaS product"
+      },
+      {
+        "roundNumber": 4,
+        "roundDescription": "Product Development Approaches",
+        "timeLimit": "10:45 AM - 11:00 AM",
+        "objective": "Choosing a tech stack: Low-code/no-code vs custom development. MVP development with a focus on simplicity and key features. Example of building a quick MVP using popular tools."
+      },
+      {
+        "roundNumber": 5,
+        "roundDescription": "Fireside Chat with Sanjeev + Q & A",
+        "timeLimit": "11:15 AM - 12:00 PM",
+        "objective": "Guest speaker Sanjeev (MicroSaaS founder or industry expert) shares his journey. Open Q&A session for participants to ask questions about challenges, growth, and scaling"
+      }
+    ],
+    "callManager": "Kovendhan",
     "price": "INR100"
   }
 ]
@@ -394,6 +461,7 @@ const GlitchText = ({ children }) => {
 export default function EventDetails() {
   const { id } = useParams();
   const event = eventsWithId.find(e => e.id === id);
+  const navigate = useNavigate();
 
   if (!event) {
     return (
@@ -411,7 +479,10 @@ export default function EventDetails() {
     <div className={` absolute inset-0 bg-[#c3ff00] bg-cover bg-center`}>
       <Navbar />
       <div className='mx-[5vw] my-6 md:mx-[10vw]'>
-        <Link to="/events"><CyberpunkButton ><i className="bi bi-box-arrow-left mr-1"></i> Back</CyberpunkButton></Link>
+        {/* <Link to="/events"><CyberpunkButton ><i className="bi bi-box-arrow-left mr-1"></i> Back</CyberpunkButton></Link> */}
+        <CyberpunkButton onClick={() => navigate(-1)}>
+          <i className="bi bi-box-arrow-left mr-1"></i> Back
+        </CyberpunkButton>
       </div>
       <div className="container mx-auto mt-8 px-4">
         <style jsx>{`

@@ -10,7 +10,7 @@ export default function Component() {
   const subTitleRef = useRef(null)
   const glitchLayers = useRef([])
 
-  const eventDate = new Date('2024-11-05T00:00:00')
+  const eventDate = new Date('2024-11-05T08:00:00')
 
   useEffect(() => {
     const updateTime = () => {
@@ -147,10 +147,10 @@ export default function Component() {
           </p>
           <div className="mt-6 md:mt-8 md:hidden space-y-2 md:space-y-0 md:space-x-4">
             <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold inline-block">
-              Where talent meets opportunity
+              Where Talent Meets Opportunity
             </p>
             <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold inline-block">
-              Now or never
+              Now OR Never
             </p>
           </div>
           <div className="mt-6 md:flex md:justify-between md:mt-8">

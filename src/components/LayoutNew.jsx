@@ -11,7 +11,7 @@ import { Footer } from "./Footer";
 
 function Layout() {
   return (
-    <div id="layout" className="cursor-none h-screen">
+    <div id="layout" className="cursor-none overflow-x-hidden">
       <div className="relative">
         <Navbar />
         <Hero />
