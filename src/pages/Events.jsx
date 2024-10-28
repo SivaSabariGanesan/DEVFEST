@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { useNavigate } from 'react-router-dom';
 import mic from '@/assets/OPENMIC.png'
-import pt from '@/assets/pt.png';
+import pt from '@/assets/pt.jpg';
 import qz from '@/assets/qz.png';
 import trek from '@/assets/tech.png';
 import llm from '@/assets/llm.png';
