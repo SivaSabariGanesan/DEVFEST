@@ -3,6 +3,7 @@ import { CyberpunkEventCard } from "@/components/Card3d";
 import Navbar from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { useNavigate } from 'react-router-dom';
+import im from '@/assets/OPENMIC.png'
 
 
 const events = [
@@ -434,7 +435,7 @@ export const Events = () => {
                 evnt={event.eventName}
                 obj={event.rounds && event.rounds.length > 0 ? event.rounds[0].objective : "Objective not available"}
                 type={event.type}
-                image={`@/components/assets/${event.eventName}` || "/placeholder.svg"}
+                image={im ||`@/components/assets/${event.eventName}`}
               />
             </div>
           ))}
