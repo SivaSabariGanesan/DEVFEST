@@ -105,7 +105,7 @@ export default function Component() {
   return (
     <div className="min-h-screen bg-transparent text-black flex pt-[8vh] md:items-center justify-center">
       <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center md:text-left">
+        <div className="text-center md:text-left space-y-8 md:space-y-0">
           <div className="relative inline-block">
             <h1
               ref={titleRef}
@@ -141,42 +141,34 @@ export default function Component() {
           </div>
           <p
             ref={subTitleRef}
-            className="text-lg md:hidden sm:text-xl md:text-2xl lg:text-3xl mt-4"
+            className="text-xl md:hidden sm:text-2xl md:text-2xl lg:text-3xl mt-4"
           >
             Brought to you by DEVS REC
           </p>
-          <div className="mt-6 md:mt-8 md:hidden space-y-2 md:space-y-0 md:space-x-4">
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold inline-block">
+          <div className="mt-8 md:mt-8 md:hidden space-y-4 md:space-y-0 md:space-x-4">
+            <p className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold inline-block">
               Where Talent Meets Opportunity
             </p>
-            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold inline-block">
+            <p className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold inline-block">
               Now OR Never
             </p>
           </div>
-          <div className="mt-6 md:flex md:justify-between md:mt-8">
-            {/* <div className="">
-              <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
-                {formatTime(currentTime)}
-              </p>
-              <p className="text-lg sm:text-xl  md:text-2xl lg:text-3xl mt-2">
-                {currentTime.getFullYear()}
-              </p>
-            </div> */}
-            <p className="text-xl sm:text-2xl my-auto md:text-3xl lg:text-4xl mt-2 font-semibold text-black">
+          <div className="mt-8 md:flex md:justify-between md:mt-8">
+            <p className="text-2xl sm:text-3xl my-auto md:text-3xl lg:text-4xl font-semibold text-black">
               Registrations open soon
             </p>
           </div>
-          <div className="mt-6 flex-row md:mt-8">
-            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <div className="mt-8 flex-row md:mt-8">
+            <p className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-4">
               Countdown to DevFest'24
             </p>
-            <div className="flex justify-center md:justify-start space-x-4">
+            <div className="flex justify-center md:justify-start space-x-4 mt-4">
               {Object.entries(countdown).map(([unit, value]) => (
                 <div key={unit} className="text-center">
-                  <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+                  <p className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold">
                     {value}
                   </p>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl">
+                  <p className="text-base sm:text-lg md:text-lg lg:text-xl">
                     {unit.charAt(0).toUpperCase() + unit.slice(1)}
                   </p>
                 </div>
